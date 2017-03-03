@@ -1,0 +1,28 @@
+{
+  "name": "angular-mdl",
+  "version": "1.0.0",
+  "description": "angular mdl bindings",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfu32/angular-mdl.git"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "design",
+    "material",
+    "design",
+    "lite",
+    "directives"
+  ],
+  "author": "Ioan Alferaru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alfu32/angular-mdl/issues"
+  },
+  "homepage": "https://github.com/alfu32/angular-mdl#readme"
+}
