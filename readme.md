@@ -5,5 +5,11 @@ https://getmdl.io/components/index.html#menus-section
 
 | Feature          | Status                              | Docs         | Issue          |
 |------------------|-------------------------------------|--------------|----------------|
+| generator script |                             Done    |              |              - |
+| build script     |                             Done    |              |              - |
+| extracted exam   |                             Done    |              |              - |
+|------------------|-------------------------------------|--------------|----------------|
+| Feature          | Status                              | Docs         | Issue          |
+|------------------|-------------------------------------|--------------|----------------|
 | button           |                         In Progress |              |              - |
 | layout           |                             Done    |              |              - |

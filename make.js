@@ -1,4 +1,4 @@
-doc=require("./_doc.json");
+doc=require("./extract.json");
 fs=require("fs");
 
 function mkdirs(path){
