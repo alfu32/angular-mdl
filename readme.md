@@ -7,7 +7,7 @@ https://getmdl.io/components/index.html#menus-section
 |------------------|-------------------------------------|--------------|----------------|
 | generator script |                             Done    |              |              - |
 | build script     |                             Done    |              |              - |
-| extracted exam   |                             Done    |              |              - |
+| extracted example|                             Done    |              |              - |
 
 
 #### Feature status:
