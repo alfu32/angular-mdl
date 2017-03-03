@@ -39,3 +39,9 @@ $ git remote add origin https://github.com/username/new_repo
 But I use git@github.com:username/new_repo rather than https://github.com/username/new_repo, as the former is for use with ssh (if you set up ssh as I mentioned in “Your first time”, then you won’t have to type your password every time you push things to github). If you use the latter construction, you’ll have to type your github password every time you push to github.
 
 Next: Contribute to someone’s repository
+
+open a git bash prompt
+type 'ssh-keygen'
+accept the default location
+choose a blank passphrase (so just press 'enter' to all questions')
+now copy to your server, eg: scp ~/.ssh/id_rsa.pub someuser@someserver.com:~
