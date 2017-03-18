@@ -64,9 +64,6 @@ https://getmdl.io/components/index.html
 - [ ] tooltip    
 - [ ] _services  
 
- :white_large_square: 
- :black_circle:       
-
 
 
 
