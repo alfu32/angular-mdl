@@ -37,18 +37,18 @@ https://getmdl.io/components/index.html#menus-section
 | [ ] |   | tooltip          |                            To Do    |              |              - |
 | [ ] |   | _services        |                        In Progress  |              |              - |
 
-https://getmdl.io/assets/comp_badges.png
-https://getmdl.io/assets/comp_buttons.png
-https://getmdl.io/assets/comp_cards.png
-https://getmdl.io/assets/comp_chips.png
-https://getmdl.io/assets/comp_dialog.png
-https://getmdl.io/assets/comp_layout.png
-https://getmdl.io/assets/comp_lists.png
-https://getmdl.io/assets/comp_loading.png
-https://getmdl.io/assets/comp_menus.png
-https://getmdl.io/assets/comp_sliders.png
-https://getmdl.io/assets/comp_snackbar.png
-https://getmdl.io/assets/comp_toggles.png
-https://getmdl.io/assets/comp_tables.png
-https://getmdl.io/assets/comp_textfields.png
-https://getmdl.io/assets/comp_tooltips.png
+![badges](https://getmdl.io/assets/comp_badges.png)
+![buttons](https://getmdl.io/assets/comp_buttons.png)
+![cards](https://getmdl.io/assets/comp_cards.png)
+![chips](https://getmdl.io/assets/comp_chips.png)
+![dialog](https://getmdl.io/assets/comp_dialog.png)
+![layout](https://getmdl.io/assets/comp_layout.png)
+![lists](https://getmdl.io/assets/comp_lists.png)
+![loading](https://getmdl.io/assets/comp_loading.png)
+![menus](https://getmdl.io/assets/comp_menus.png)
+![sliders](https://getmdl.io/assets/comp_sliders.png)
+![snackbar](https://getmdl.io/assets/comp_snackbar.png)
+![toggles](https://getmdl.io/assets/comp_toggles.png)
+![tables](https://getmdl.io/assets/comp_tables.png)
+![textfields](https://getmdl.io/assets/comp_textfields.png)
+![tooltips](https://getmdl.io/assets/comp_tooltips.png)
