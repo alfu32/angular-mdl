@@ -1,26 +1,18 @@
 
 angular.module("mdl")
-.directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(){
+.directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeaderDrawer">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				mNav:"?mNav",
+				mContent:"?mContent",
+				mTitle:"?mTitle"
 			},
 			template:'\
 <!-- The drawer is always open in large screens. The header is always shown,\
@@ -44,8 +36,8 @@ angular.module("mdl")
     </div>\
   </header>\
   <div class="mdl-layout__drawer">\
-    <span class="mdl-layout-title">Title</span>\
-    <nav class="mdl-navigation">\
+    <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
+    <nav class="mdl-navigation" ng-transclude="mNav">\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
@@ -53,19 +45,19 @@ angular.module("mdl")
     </nav>\
   </div>\
   <main class="mdl-layout__content">\
-    <div class="page-content"><!-- Your content goes here --></div>\
+    <div class="page-content" ng-transclude="mContent"><!-- Your content goes here --></div>\
   </main>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedHeaderDrawer-compile",tElm.html())
+			  	//console.debug("FixedHeaderDrawer-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeaderDrawer-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedHeaderDrawer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeaderDrawer-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedHeaderDrawer-post",elm);
 				
 			  }
 			}

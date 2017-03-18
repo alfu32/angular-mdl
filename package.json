@@ -4,7 +4,8 @@
   "description": "angular mdl bindings",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "test.js",
+    "start":"autobuild.js"
   },
   "repository": {
     "type": "git",

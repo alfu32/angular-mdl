@@ -1,0 +1,27 @@
+{
+  "name": "angular-mdl-test",
+  "homepage": "https://github.com/alfu32/angular-mdl",
+  "authors": [
+    "alfu32 <ioan.alferaru@gmail.com>"
+  ],
+  "description": "angular mdl tests",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "mdl",
+    "test"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.3",
+    "material-design-lite": "mdl#^1.3.0",
+    "angular-route": "^1.6.3"
+  }
+}

@@ -1,0 +1,8 @@
+[
+	{"category":"layout","name":"FixedDrawer","route":"/layout/FixedDrawer","test":"./components/layout/FixedDrawer.html"},
+	{"category":"layout","name":"FixedHeader","route":"/layout/FixedHeader","test":"./components/layout/FixedHeader.html"},
+	{"category":"layout","name":"FixedHeaderDrawer","route":"/layout/FixedHeaderDrawer","test":"./components/layout/FixedHeaderDrawer.html"},
+	{"category":"layout","name":"FixedTabs","route":"/layout/FixedTabs","test":"./components/layout/FixedTabs.html"},
+	{"category":"buttons","name":"Fabs","route":"/buttons/Fabs","test":"./components/buttons/Fabs.html"},
+	{"category":"buttons","name":"Buttons","route":"/buttons/Buttons","test":"./components/buttons/Buttons.html"}
+]

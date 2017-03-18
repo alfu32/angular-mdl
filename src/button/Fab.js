@@ -1,42 +1,40 @@
 
 angular.module("mdl")
-.directive("mdlFab",function FabDirective(){
+.directive("mdlFab",function FabDirective(mdl){
 	var stl=angular.element('<style id="mdlFab">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
-			transclude: {
-			},
+			scope:{},
+			transclude: true,
 			template:'\
 <!-- FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab">\
-  <i class="material-icons">add</i>\
+<button class="mdl-button mdl-js-button mdl-button--fab" \
+ng-class="{ \'mdl-button--mini-fab\' : miniFab ,\'mdl-js-ripple-effect\': ripple ,\'mdl-button--colored\': colored ,\'mdl-button--primary\': primary ,\'mdl-button--accent\': accent }"\
+{{disabled?\'disabled\':\'\'}}">\
+  <i class="material-icons" ng-transclude>add</i>\
 </button>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Fab-compile",tElm.html())
+			  	//console.debug("Fab-compile",tAttrs)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Fab-pre",elm.html(),(transcludeFn(scope)));
+				  	scope.miniFab=("mini" in attrs);
+				  	scope.raised=("raised" in attrs);
+				  	scope.ripple=("ripple" in attrs);
+					scope.colored=("colored" in attrs);
+					scope.disabled=(attrs["disabled"]=="true");
+					scope.primary=attrs.colored=="primary";
+					scope.accent=attrs.colored=="accent";
+				  	//console.debug("Fab-pre",attrs,scope);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Fab-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("Fab-post",elm);
 				
 			  }
 			}

@@ -1,26 +1,28 @@
+/**
+* @category directive
+* @memberof mdlAngular.layout
+* @name mdl-fixed-tabs
+* @description
 
+* @usage
+
+* @example
+
+**/
 angular.module("mdl")
-.directive("mdlFixedTabs",function FixedTabsDirective(){
+.directive("mdlFixedTabs",function FixedTabsDirective($timeout,$sce,mdl){
 	var stl=angular.element('<style id="mdlFixedTabs">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
+			scope:{},
 			transclude: {
+				mTitle:"?mTitle",
+				mTabs:"mTabs"
 			},
 			template:'\
 <!-- Simple header with fixed tabs. -->\
@@ -29,42 +31,58 @@ angular.module("mdl")
   <header class="mdl-layout__header">\
     <div class="mdl-layout__header-row">\
       <!-- Title -->\
-      <span class="mdl-layout-title">Title</span>\
+      <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
     </div>\
     <!-- Tabs -->\
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">\
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>\
-      <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>\
-      <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>\
+      <a ng-click="$.$selected=$index" href="" \
+      ng-repeat="tab in tabs" \
+      class="mdl-layout__tab" \
+      ng-class="{\'is-active\':($.$selected==$index) }" ng-bind-html="tab.title | trustAsHtml"></a>\
     </div>\
   </header>\
   <div class="mdl-layout__drawer">\
     <span class="mdl-layout-title">Title</span>\
   </div>\
+  <template ng-transclude="mTabs"></template>\
   <main class="mdl-layout__content">\
-    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">\
-      <div class="page-content"><!-- Your content goes here --></div>\
-    </section>\
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">\
-      <div class="page-content"><!-- Your content goes here --></div>\
-    </section>\
-    <section class="mdl-layout__tab-panel" id="fixed-tab-3">\
-      <div class="page-content"><!-- Your content goes here --></div>\
+    <section class="mdl-layout__tab-panel" ng-repeat="tab in tabs" ng-class="{\'is-active\':($.$selected==$index) }">\
+      <div class="page-content" ng-bind-html="tab.content | trustAsHtml"></div>\
     </section>\
   </main>\
 </div>\
 \
 ',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedTabs-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedTabs-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedTabs-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
+		compile:function(tElm,tAttrs,transclude){
+		  	//console.debug("FixedTabs-compile",tElm,tElm.find("m-tabs").children())
+		  	function $array(al){
+		  		return Array.prototype.slice.call(al,0)
+		  	}
+			return {
+				pre:function(scope, elm, attrs,ctrl,transcludeFn){
+					scope.$={}
+					//console.debug("FixedTabs-pre",scope, elm, attrs,ctrl,transcludeFn);
+					$timeout(function(){
+						//console.debug("FixedTabs-pre",elm,elm[0].querySelectorAll("m-tabs"));
+						//console.debug("FixedTabs-pre",tElm,tElm.find("m-tabs").children())
+						scope.tabs=$array(elm.find("m-tab"))
+						.reduce(function(acc,v,i){
+							//console.debug(acc,v,i,v.querySelectorAll("m-caption"),v.querySelectorAll("m-content"))
+							var t=v.querySelectorAll("m-caption");
+							var c=v.querySelectorAll("m-content");
+							acc.push({
+								title:t[0]?t[0].innerHTML:"TAB "+i,
+								content:c[0]?c[0].innerHTML:"TAB content "+i
+							});
+							if(v.hasAttribute("active"))scope.$.$selected=i;
+							return acc;
+						},[]);
+						//$timeout(function(){ scope.$apply() })
+					},100)
+				},
+				post:function(scope, elm, attrs,ctrl,transcludeFn){
+					//console.debug("FixedTabs-post",elm);
+				}
 			}
 		}
 	}

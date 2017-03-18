@@ -1,0 +1,26 @@
+{
+  "name": "angular-mdl",
+  "description": "angular mdl bindings",
+  "main": "index.js",
+  "authors": [
+    "Ioan Alferaru"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material",
+    "design",
+    "material",
+    "design",
+    "lite",
+    "directives"
+  ],
+  "homepage": "https://github.com/alfu32/angular-mdl",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

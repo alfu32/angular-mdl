@@ -1,41 +1,126 @@
 angular.module('mdl',[]);
 
 angular.module("mdl")
-.directive("mdlBadgeOnIconIcon",function BadgeOnIconIconDirective(){
-	var stl=angular.element('<style id="mdlBadgeOnIconIcon">\n\
+.directive("mdlSpacer",function Spacer(mdl){
+	var stl=angular.element('<style id="mdlSpacer">\n\
 		</style>\n\
 	');
 
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
-			transclude: {
-			},
+			transclude: false,
+			template:'<div class="mdl-layout-spacer"></div>',
+			compile:function(tElm,tAttrs,transclude){
+			  	console.debug("mdlSpacer-compile",tElm)
+				return {
+				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	console.debug("mdlSpacer-pre",elm);
+				  },
+				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	console.debug("mdlSpacer-post",elm);
+				
+			  }
+			}
+		}
+	}
+});
+;
+
+angular.module("mdl")
+.directive("mdlBadge",function mdlBadge(mdl){
+	var stl=angular.element('<style id="mdlBadge">\n\
+		</style>\n\
+	');
+	mdl.applyStyle(stl[0]);
+
+	return {
+			priority: 1,
+			restrict: 'A',
+			transclude:false,
+			//class="material-icons mdl-badge mdl-badge--overlap" data-badge="1"
+			compile:function(tElm,tAttrs,transclude){
+			  	//console.debug("Badge-compile",tElm)
+				return {
+				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	//console.debug("Badge-pre",elm);
+				  },
+				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	//console.debug("Badge-post",elm.attr("mdl-badge-overlap"));
+				  	elm.addClass("mdl-badge");
+				  	elm.attr("data-badge",elm.attr("mdl-badge"))
+			  }
+			}
+		}
+	}
+});
+
+angular.module("mdl")
+.directive("mdlBadgeOverlap",function mdlBadgeOverlap(mdl){
+	var stl=angular.element('<style id="mdlBadgeOverlap">\n\
+		</style>\n\
+	');
+	mdl.applyStyle(stl[0]);
+
+	return {
+			priority: 1,
+			restrict: 'A',
+			transclude:false,
+			//class="material-icons mdl-badge mdl-badge--overlap" data-badge="1"
+			compile:function(tElm,tAttrs,transclude){
+			  	//console.debug("BadgeOverlap-compile",tElm)
+				return {
+				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	//console.debug("BadgeOverlap-pre",elm);
+				  },
+				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	//console.debug("BadgeOverlap-post",elm.attr("mdl-badge-overlap"));
+				  	elm.addClass("mdl-badge");
+				  	elm.addClass("mdl-badge--overlap");
+				  	elm.attr("data-badge",elm.attr("mdl-badge-overlap"))
+			  }
+			}
+		}
+	}
+});
+
+angular.module("mdl")
+.directive("mdlButton",function FlatDirective(mdl){
+	var stl=angular.element('<style id="mdlButton">\n\
+		</style>\n\
+	');
+	mdl.applyStyle(stl[0]);
+
+	return {
+			priority: 1,
+			restrict: 'E',
+			scope:{},
+			transclude: true,
 			template:'\
-<!-- Icon badge on icon -->\
-<div class="material-icons mdl-badge mdl-badge--overlap" data-badge="♥">account_box</div>\
+<!-- Flat button -->\
+<button class="mdl-button mdl-js-button" \
+ng-class="{ \'mdl-button--raised\': raised , \'mdl-js-ripple-effect\': ripple ,\'mdl-button--colored\': colored ,\'mdl-button--primary\': primary ,\'mdl-button--accent\': accent }"\
+{{disabled?\'disabled\':\'\'}}" ng-transclude>\
+  Button\
+</button>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("BadgeOnIconIcon-compile",tElm.html())
+			  	//console.debug("Button-compile",tAttrs)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnIconIcon-pre",elm.html(),(transcludeFn(scope)));
+				  	scope.raised=("raised" in attrs);
+				  	scope.ripple=("ripple" in attrs);
+					scope.colored=("colored" in attrs);
+					scope.disabled=(attrs["disabled"]=="true");
+					scope.primary=attrs.colored=="primary";
+					scope.accent=attrs.colored=="accent";
+				  	//console.debug("Button-pre",attrs,scope);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnIconIcon-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("Button-post",elm);
 				
 			  }
 			}
@@ -44,1027 +129,41 @@ angular.module("mdl")
 });
 
 angular.module("mdl")
-.directive("mdlBadgeOnIconText",function BadgeOnIconTextDirective(){
-	var stl=angular.element('<style id="mdlBadgeOnIconText">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Number badge on icon -->\
-<div class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">account_box</div>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("BadgeOnIconText-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnIconText-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnIconText-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlBadgeOnTextIcon",function BadgeOnTextIconDirective(){
-	var stl=angular.element('<style id="mdlBadgeOnTextIcon">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Icon badge -->\
-<span class="mdl-badge" data-badge="♥">Mood</span>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("BadgeOnTextIcon-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnTextIcon-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnTextIcon-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlBadgeOnTextText",function BadgeOnTextTextDirective(){
-	var stl=angular.element('<style id="mdlBadgeOnTextText">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Number badge -->\
-<span class="mdl-badge" data-badge="4">Inbox</span>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("BadgeOnTextText-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnTextText-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("BadgeOnTextText-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFab",function FabDirective(){
+.directive("mdlFab",function FabDirective(mdl){
 	var stl=angular.element('<style id="mdlFab">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
-			transclude: {
-			},
+			scope:{},
+			transclude: true,
 			template:'\
 <!-- FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab">\
-  <i class="material-icons">add</i>\
+<button class="mdl-button mdl-js-button mdl-button--fab" \
+ng-class="{ \'mdl-button--mini-fab\' : miniFab ,\'mdl-js-ripple-effect\': ripple ,\'mdl-button--colored\': colored ,\'mdl-button--primary\': primary ,\'mdl-button--accent\': accent }"\
+{{disabled?\'disabled\':\'\'}}">\
+  <i class="material-icons" ng-transclude>add</i>\
 </button>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Fab-compile",tElm.html())
+			  	//console.debug("Fab-compile",tAttrs)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Fab-pre",elm.html(),(transcludeFn(scope)));
+				  	scope.miniFab=("mini" in attrs);
+				  	scope.raised=("raised" in attrs);
+				  	scope.ripple=("ripple" in attrs);
+					scope.colored=("colored" in attrs);
+					scope.disabled=(attrs["disabled"]=="true");
+					scope.primary=attrs.colored=="primary";
+					scope.accent=attrs.colored=="accent";
+				  	//console.debug("Fab-pre",attrs,scope);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Fab-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabColored",function FabColoredDirective(){
-	var stl=angular.element('<style id="mdlFabColored">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Colored FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabColored-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabColored-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabColored-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabColoredRipple",function FabColoredRippleDirective(){
-	var stl=angular.element('<style id="mdlFabColoredRipple">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Colored FAB button with ripple -->\
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabColoredRipple-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabColoredRipple-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabColoredRipple-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabDisabled",function FabDisabledDirective(){
-	var stl=angular.element('<style id="mdlFabDisabled">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Disabled FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab" disabled>\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabDisabled-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabDisabled-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabDisabled-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabMini",function FabMiniDirective(){
-	var stl=angular.element('<style id="mdlFabMini">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Mini FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabMini-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabMini-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabMini-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabMiniColored",function FabMiniColoredDirective(){
-	var stl=angular.element('<style id="mdlFabMiniColored">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Colored mini FAB button -->\
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabMiniColored-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabMiniColored-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabMiniColored-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFabRipple",function FabRippleDirective(){
-	var stl=angular.element('<style id="mdlFabRipple">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- FAB button with ripple -->\
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">\
-  <i class="material-icons">add</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FabRipple-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabRipple-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FabRipple-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFlat",function FlatDirective(){
-	var stl=angular.element('<style id="mdlFlat">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Flat button -->\
-<button class="mdl-button mdl-js-button">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Flat-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Flat-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Flat-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFlatAccent",function FlatAccentDirective(){
-	var stl=angular.element('<style id="mdlFlatAccent">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Accent-colored flat button -->\
-<button class="mdl-button mdl-js-button mdl-button--accent">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FlatAccent-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatAccent-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatAccent-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFlatDisabled",function FlatDisabledDirective(){
-	var stl=angular.element('<style id="mdlFlatDisabled">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Disabled flat button -->\
-<button class="mdl-button mdl-js-button" disabled>\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FlatDisabled-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatDisabled-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatDisabled-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFlatPrimary",function FlatPrimaryDirective(){
-	var stl=angular.element('<style id="mdlFlatPrimary">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Primary-colored flat button -->\
-<button class="mdl-button mdl-js-button mdl-button--primary">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FlatPrimary-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatPrimary-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatPrimary-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlFlatRipple",function FlatRippleDirective(){
-	var stl=angular.element('<style id="mdlFlatRipple">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Flat button with ripple -->\
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FlatRipple-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatRipple-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FlatRipple-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlIcon",function IconDirective(){
-	var stl=angular.element('<style id="mdlIcon">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Icon button -->\
-<button class="mdl-button mdl-js-button mdl-button--icon">\
-  <i class="material-icons">mood</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Icon-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Icon-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Icon-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlIconColored",function IconColoredDirective(){
-	var stl=angular.element('<style id="mdlIconColored">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Colored icon button -->\
-<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">\
-  <i class="material-icons">mood</i>\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("IconColored-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("IconColored-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("IconColored-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaised",function RaisedDirective(){
-	var stl=angular.element('<style id="mdlRaised">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Raised button -->\
-<button class="mdl-button mdl-js-button mdl-button--raised">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Raised-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Raised-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Raised-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaisedAccent",function RaisedAccentDirective(){
-	var stl=angular.element('<style id="mdlRaisedAccent">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Accent-colored raised button -->\
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("RaisedAccent-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedAccent-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedAccent-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaisedColored",function RaisedColoredDirective(){
-	var stl=angular.element('<style id="mdlRaisedColored">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Colored raised button -->\
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("RaisedColored-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedColored-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedColored-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaisedDisabled",function RaisedDisabledDirective(){
-	var stl=angular.element('<style id="mdlRaisedDisabled">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Raised disabled button -->\
-<button class="mdl-button mdl-js-button mdl-button--raised" disabled>\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("RaisedDisabled-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedDisabled-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedDisabled-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaisedRipple",function RaisedRippleDirective(){
-	var stl=angular.element('<style id="mdlRaisedRipple">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Raised button with ripple -->\
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("RaisedRipple-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedRipple-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedRipple-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlRaisedRippleAccent",function RaisedRippleAccentDirective(){
-	var stl=angular.element('<style id="mdlRaisedRippleAccent">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Accent-colored raised button with ripple -->\
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">\
-  Button\
-</button>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("RaisedRippleAccent-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedRippleAccent-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("RaisedRippleAccent-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("Fab-post",elm);
 				
 			  }
 			}
@@ -2058,36 +1157,38 @@ angular.module("mdl")
 		}
 	}
 });
+/**
+* @category directive
+* @memberof mdlAngular.layout
+* @name mdl-fixed-drawer
+* @description
 
+* @usage
+
+* @example
+
+**/
 angular.module("mdl")
-.directive("mdlFixedDrawer",function FixedDrawerDirective(){
+.directive("mdlFixedDrawer",function FixedDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedDrawer">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				mNav:"?mNav",
+				mContent:"?mContent",
+				mTitle:"?mTitle"
 			},
 			template:'\
 <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->\
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">\
   <div class="mdl-layout__drawer">\
-    <span class="mdl-layout-title">Title</span>\
-    <nav class="mdl-navigation">\
+    <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
+    <nav class="mdl-navigation" ng-transclude="mNav">\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
@@ -2095,19 +1196,19 @@ angular.module("mdl")
     </nav>\
   </div>\
   <main class="mdl-layout__content">\
-    <div class="page-content"><!-- Your content goes here --></div>\
+    <div class="page-content" ng-transclude="mContent"><!-- Your content goes here --></div>\
   </main>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedDrawer-compile",tElm.html())
+			  	//console.debug("FixedDrawer-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedDrawer-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedDrawer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedDrawer-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedDrawer-post",elm);
 				
 			  }
 			}
@@ -2116,27 +1217,20 @@ angular.module("mdl")
 });
 
 angular.module("mdl")
-.directive("mdlFixedHeader",function FixedHeaderDirective(){
+.directive("mdlFixedHeader",function FixedHeaderDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeader">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				mNav:"?mNav",
+				mLinks:"?mLinks",
+				mContent:"?mContent",
+				mTitle:"?mTitle"
 			},
 			template:'\
 <!-- Always shows a header, even in smaller screens. -->\
@@ -2144,42 +1238,36 @@ angular.module("mdl")
   <header class="mdl-layout__header">\
     <div class="mdl-layout__header-row">\
       <!-- Title -->\
-      <span class="mdl-layout-title">Title</span>\
+      <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
       <!-- Add spacer, to align navigation to the right -->\
       <div class="mdl-layout-spacer"></div>\
       <!-- Navigation. We hide it in small screens. -->\
-      <nav class="mdl-navigation mdl-layout--large-screen-only">\
-        <a class="mdl-navigation__link" href="">Link</a>\
-        <a class="mdl-navigation__link" href="">Link</a>\
-        <a class="mdl-navigation__link" href="">Link</a>\
+      <nav class="mdl-navigation mdl-layout--large-screen-only" ng-transclude="mLinks">\
         <a class="mdl-navigation__link" href="">Link</a>\
       </nav>\
     </div>\
   </header>\
   <div class="mdl-layout__drawer">\
-    <span class="mdl-layout-title">Title</span>\
-    <nav class="mdl-navigation">\
-      <a class="mdl-navigation__link" href="">Link</a>\
-      <a class="mdl-navigation__link" href="">Link</a>\
-      <a class="mdl-navigation__link" href="">Link</a>\
+    <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
+    <nav class="mdl-navigation" ng-transclude="mNav">\
       <a class="mdl-navigation__link" href="">Link</a>\
     </nav>\
   </div>\
   <main class="mdl-layout__content">\
-    <div class="page-content"><!-- Your content goes here --></div>\
+    <div class="page-content" ng-transclude="mContent"><!-- Your content goes here --></div>\
   </main>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedHeader-compile",tElm.html())
+			  	//console.debug("FixedHeader-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeader-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedHeader-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeader-post",elm.html(),(transcludeFn(scope)));
-				
+				  	//console.debug("FixedHeader-post",elm);
+				  	componentHandler.upgradeAllRegistered()
 			  }
 			}
 		}
@@ -2187,27 +1275,19 @@ angular.module("mdl")
 });
 
 angular.module("mdl")
-.directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(){
+.directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeaderDrawer">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				mNav:"?mNav",
+				mContent:"?mContent",
+				mTitle:"?mTitle"
 			},
 			template:'\
 <!-- The drawer is always open in large screens. The header is always shown,\
@@ -2231,8 +1311,8 @@ angular.module("mdl")
     </div>\
   </header>\
   <div class="mdl-layout__drawer">\
-    <span class="mdl-layout-title">Title</span>\
-    <nav class="mdl-navigation">\
+    <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
+    <nav class="mdl-navigation" ng-transclude="mNav">\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
       <a class="mdl-navigation__link" href="">Link</a>\
@@ -2240,48 +1320,50 @@ angular.module("mdl")
     </nav>\
   </div>\
   <main class="mdl-layout__content">\
-    <div class="page-content"><!-- Your content goes here --></div>\
+    <div class="page-content" ng-transclude="mContent"><!-- Your content goes here --></div>\
   </main>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedHeaderDrawer-compile",tElm.html())
+			  	//console.debug("FixedHeaderDrawer-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeaderDrawer-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedHeaderDrawer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedHeaderDrawer-post",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("FixedHeaderDrawer-post",elm);
 				
 			  }
 			}
 		}
 	}
 });
+/**
+* @category directive
+* @memberof mdlAngular.layout
+* @name mdl-fixed-tabs
+* @description
 
+* @usage
+
+* @example
+
+**/
 angular.module("mdl")
-.directive("mdlFixedTabs",function FixedTabsDirective(){
+.directive("mdlFixedTabs",function FixedTabsDirective($timeout,$sce,mdl){
 	var stl=angular.element('<style id="mdlFixedTabs">\n\
 		</style>\n\
 	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
+	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
 			restrict: 'E',
+			scope:{},
 			transclude: {
+				mTitle:"?mTitle",
+				mTabs:"mTabs"
 			},
 			template:'\
 <!-- Simple header with fixed tabs. -->\
@@ -2290,42 +1372,58 @@ angular.module("mdl")
   <header class="mdl-layout__header">\
     <div class="mdl-layout__header-row">\
       <!-- Title -->\
-      <span class="mdl-layout-title">Title</span>\
+      <span class="mdl-layout-title" ng-transclude="mTitle">Title</span>\
     </div>\
     <!-- Tabs -->\
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">\
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Tab 1</a>\
-      <a href="#fixed-tab-2" class="mdl-layout__tab">Tab 2</a>\
-      <a href="#fixed-tab-3" class="mdl-layout__tab">Tab 3</a>\
+      <a ng-click="$.$selected=$index" href="" \
+      ng-repeat="tab in tabs" \
+      class="mdl-layout__tab" \
+      ng-class="{\'is-active\':($.$selected==$index) }" ng-bind-html="tab.title | trustAsHtml"></a>\
     </div>\
   </header>\
   <div class="mdl-layout__drawer">\
     <span class="mdl-layout-title">Title</span>\
   </div>\
+  <template ng-transclude="mTabs"></template>\
   <main class="mdl-layout__content">\
-    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">\
-      <div class="page-content"><!-- Your content goes here --></div>\
-    </section>\
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">\
-      <div class="page-content"><!-- Your content goes here --></div>\
-    </section>\
-    <section class="mdl-layout__tab-panel" id="fixed-tab-3">\
-      <div class="page-content"><!-- Your content goes here --></div>\
+    <section class="mdl-layout__tab-panel" ng-repeat="tab in tabs" ng-class="{\'is-active\':($.$selected==$index) }">\
+      <div class="page-content" ng-bind-html="tab.content | trustAsHtml"></div>\
     </section>\
   </main>\
 </div>\
 \
 ',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("FixedTabs-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedTabs-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("FixedTabs-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
+		compile:function(tElm,tAttrs,transclude){
+		  	//console.debug("FixedTabs-compile",tElm,tElm.find("m-tabs").children())
+		  	function $array(al){
+		  		return Array.prototype.slice.call(al,0)
+		  	}
+			return {
+				pre:function(scope, elm, attrs,ctrl,transcludeFn){
+					scope.$={}
+					//console.debug("FixedTabs-pre",scope, elm, attrs,ctrl,transcludeFn);
+					$timeout(function(){
+						//console.debug("FixedTabs-pre",elm,elm[0].querySelectorAll("m-tabs"));
+						//console.debug("FixedTabs-pre",tElm,tElm.find("m-tabs").children())
+						scope.tabs=$array(elm.find("m-tab"))
+						.reduce(function(acc,v,i){
+							//console.debug(acc,v,i,v.querySelectorAll("m-caption"),v.querySelectorAll("m-content"))
+							var t=v.querySelectorAll("m-caption");
+							var c=v.querySelectorAll("m-content");
+							acc.push({
+								title:t[0]?t[0].innerHTML:"TAB "+i,
+								content:c[0]?c[0].innerHTML:"TAB content "+i
+							});
+							if(v.hasAttribute("active"))scope.$.$selected=i;
+							return acc;
+						},[]);
+						//$timeout(function(){ scope.$apply() })
+					},100)
+				},
+				post:function(scope, elm, attrs,ctrl,transcludeFn){
+					//console.debug("FixedTabs-post",elm);
+				}
 			}
 		}
 	}
@@ -4511,4 +3609,38 @@ Follow\
 			}
 		}
 	}
-})
+});
+angular.module("mdl")
+.factory("mdl",function mdl($http){
+	var cache={length:0}
+
+	return {
+		applyStyle:applyStyle,
+		loadStyle:loadStyle
+	}
+
+	function applyStyle(_style){
+		var style=document.querySelectorAll("style#"+_style.id);
+		if(style.length==0){
+			try{
+				document.body.appendChild(_style);
+				console.debug("apply style","style#"+_style.id)
+			}catch(err){
+				setTimeout(function(){applyStyle(_style)},1000);
+			}
+		}
+	}
+
+	function loadStyle(url){
+		if(!(url in cache)){
+			$http.get(url)
+			.then(function(response){
+				var stl=angular.element('<style id="style_'+cache.length+'">'+response.data+'</style>');
+				applyStyle(stl[0]);
+				cache[url]=url;
+				cache.length=Object.keys(cache).length;
+			});
+		}
+	}
+
+});

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular MDL - tests</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./bower_components/material-design-lite/material.min.css">
+	<script type="text/javascript" src="./bower_components/material-design-lite/material.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+			angular.module("mdl",[]);
+		})()
+	</script>
+	<script type="text/javascript" src="../src/_services/MDL.js"></script>
+	<script type="text/javascript" src="../src/accesories/Spacer.js"></script>
+	<script type="text/javascript" src="../src/layout/FixedHeader.js"></script>
+	<script type="text/javascript" src="../src/layout/FixedDrawer.js"></script>
+	<script type="text/javascript" src="../src/layout/FixedHeaderDrawer.js"></script>
+	<script type="text/javascript" src="../src/layout/FixedTabs.js"></script>
+	<script type="text/javascript" src="../src/button/Fab.js"></script>
+	<script type="text/javascript" src="../src/button/Button.js"></script>
+	<script type="text/javascript" src="../src/badge/Badge.js"></script>
+	<script type="text/javascript" src="../src/badge/BadgeOverlap.js"></script>
+	<script type="text/javascript">
+		function $require(url){
+			return new Promise(function(resolve,reject){
+				var xhr = new XMLHttpRequest();         
+	            xhr.onreadystatechange = function() {
+	                if(xhr.readyState == 4) {
+	                    resolve(xhr.responseText);
+	                }
+	            }
+	            xhr.open("GET",url,true);
+	            xhr.send(null);
+			})
+
+		}
+		(function(){
+			angular.module("angular-mdl.tests",["ngRoute","mdl"])
+			.config(function($routeProvider) {
+			    $routeProvider
+			    .when("/", {
+			        templateUrl : "list.html"
+			    })
+			    .otherwise({
+			        templateUrl : "list.html"
+			    });
+
+				$require("component.tests.json")
+				.then(function(text){
+				    JSON.parse(text)
+				    .forEach(function(item){
+						$routeProvider
+						.when(item.route, {
+					        templateUrl : item.test
+					    })
+					});
+					//console.log("$routeProvider",$routeProvider);
+				})
+			})
+			.filter('trustAsHtml', ['$sce', function($sce){
+				return function(text) {
+					return $sce.trustAsHtml(text);
+				};
+			}])
+			.controller("main",function($scope,$location,$http,$timeout){
+				var mainTests=this;
+				$scope.list=[];
+				$http.get("component.tests.json").then(function(result){
+					//console.log("data",result.data);
+					$scope.list=result.data;
+				})
+				$scope.test="test"
+				mainTests.test="it works"
+
+				$scope.$on('$locationChangeSuccess', function(next, current) {
+					//console.debug("locationChanged",$location);
+					$timeout(function(){
+						componentHandler.upgradeAllRegistered();
+					},100)
+					
+				});
+			})
+		})();
+	</script>
+	<style type="text/css">
+		.layout-panel-example{
+			box-sizing: border-box;
+			margin: 5px;
+			border: 8px solid white;
+			background: hsla(11, 46%, 23%, 0.38);
+			min-height: 480px;
+			max-height: 480px;
+			/*padding: 10px;*/
+			display: table;
+		}
+	</style>
+</head>
+<body ng-app="angular-mdl.tests">
+<div ng-controller="main as mainTests">
+	<mdl-fixed-header>
+		<m-title>
+			Angular MDL tests
+		</m-title>
+		<m-nav>
+			<a  ng-repeat="item in list" class="mdl-navigation__link" href="#!{{item.route}}">{{item.route}}</a>
+		</m-nav>
+		<m-links>
+			<mdl-button raised href="#!/help">Help</mdl-button>
+			<mdl-button raised href="#!/about">About</mdl-button>
+			<mdl-button raised href="#!/licence">Licence(MIT)</mdl-button>
+		</m-links>
+		<m-content>
+			<div ng-view></div>
+		</m-content>
+	</mdl-fixed-header>
+</div>
+</body>
+</html>
