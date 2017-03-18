@@ -1,5 +1,6 @@
 doc=require("./extract.json");
 fs=require("fs");
+var UglifyJS = require("uglify-js");
 
 function mkdirs(path){
 	try{
@@ -26,6 +27,10 @@ function compile(){
 
 	mkdirs('./build');
 	fs.writeFileSync("build/ngmdl.js","angular.module('mdl',[]);\n"+directiveCache.join(";\n") )
+	fs.writeFileSync("build/ngmdl.min.js",UglifyJS.minify("build/ngmdl.js",{
+		outSourceMap: "build/ngmdl.min.js.map",
+  		outFileName: "build/ngmdl.min.js",
+	}).code);
 }
 
 module.exports.compile=compile;
