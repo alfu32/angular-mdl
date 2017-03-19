@@ -12,6 +12,9 @@
 angular.module("mdl")
 .directive("mdlFixedTabs",function FixedTabsDirective($timeout,$sce,mdl){
 	var stl=angular.element('<style id="mdlFixedTabs">\n\
+m-tabs,m-title,m-caption,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -82,6 +85,7 @@ angular.module("mdl")
 				},
 				post:function(scope, elm, attrs,ctrl,transcludeFn){
 					//console.debug("FixedTabs-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				}
 			}
 		}

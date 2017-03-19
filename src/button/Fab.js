@@ -2,13 +2,16 @@
 angular.module("mdl")
 .directive("mdlFab",function FabDirective(mdl){
 	var stl=angular.element('<style id="mdlFab">\n\
-		</style>\n\
+mdl-fab{\n\
+	display:inline-block;\n\
+}\n\
+</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			scope:{},
 			transclude: true,
 			template:'\
@@ -35,6 +38,7 @@ ng-class="{ \'mdl-button--mini-fab\' : miniFab ,\'mdl-js-ripple-effect\': ripple
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("Fab-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}

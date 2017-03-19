@@ -2,13 +2,16 @@
 angular.module("mdl")
 .directive("mdlButton",function FlatDirective(mdl){
 	var stl=angular.element('<style id="mdlButton">\n\
-		</style>\n\
+mdl-button{\n\
+	display:inline-block;\n\
+}\n\
+</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			scope:{},
 			transclude: true,
 			template:'\
@@ -34,6 +37,7 @@ ng-class="{ \'mdl-button--raised\': raised , \'mdl-js-ripple-effect\': ripple ,\
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("Button-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}

@@ -9,18 +9,18 @@ angular.module("mdl")
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			transclude: false,
-			template:'<div class="mdl-layout-spacer"></div>',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("mdlSpacer-compile",tElm)
+			  	//console.debug("mdlSpacer-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("mdlSpacer-pre",elm);
+				  	elm.addClass("mdl-layout-spacer");
+				  	//console.debug("mdlSpacer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("mdlSpacer-post",elm);
-				
+				  	//console.debug("mdlSpacer-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}

@@ -21,6 +21,7 @@ angular.module("mdl")
 				  	//console.debug("Badge-post",elm.attr("mdl-badge-overlap"));
 				  	elm.addClass("mdl-badge");
 				  	elm.attr("data-badge",elm.attr("mdl-badge"))
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}

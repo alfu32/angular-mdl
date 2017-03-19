@@ -4,5 +4,6 @@
 	{"category":"layout","name":"FixedHeaderDrawer","route":"/layout/FixedHeaderDrawer","test":"./components/layout/FixedHeaderDrawer.html"},
 	{"category":"layout","name":"FixedTabs","route":"/layout/FixedTabs","test":"./components/layout/FixedTabs.html"},
 	{"category":"buttons","name":"Fabs","route":"/buttons/Fabs","test":"./components/buttons/Fabs.html"},
-	{"category":"buttons","name":"Buttons","route":"/buttons/Buttons","test":"./components/buttons/Buttons.html"}
+	{"category":"buttons","name":"Buttons","route":"/buttons/Buttons","test":"./components/buttons/Buttons.html"},
+	{"category":"cards","name":"Cards","route":"/cards","test":"./components/Cards.html"}
 ]

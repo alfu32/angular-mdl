@@ -10,18 +10,18 @@ angular.module("mdl")
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			transclude: false,
-			template:'<div class="mdl-layout-spacer"></div>',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("mdlSpacer-compile",tElm)
+			  	//console.debug("mdlSpacer-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("mdlSpacer-pre",elm);
+				  	elm.addClass("mdl-layout-spacer");
+				  	//console.debug("mdlSpacer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("mdlSpacer-post",elm);
-				
+				  	//console.debug("mdlSpacer-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -51,6 +51,7 @@ angular.module("mdl")
 				  	//console.debug("Badge-post",elm.attr("mdl-badge-overlap"));
 				  	elm.addClass("mdl-badge");
 				  	elm.attr("data-badge",elm.attr("mdl-badge"))
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -80,6 +81,7 @@ angular.module("mdl")
 				  	elm.addClass("mdl-badge");
 				  	elm.addClass("mdl-badge--overlap");
 				  	elm.attr("data-badge",elm.attr("mdl-badge-overlap"))
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -89,13 +91,16 @@ angular.module("mdl")
 angular.module("mdl")
 .directive("mdlButton",function FlatDirective(mdl){
 	var stl=angular.element('<style id="mdlButton">\n\
-		</style>\n\
+mdl-button{\n\
+	display:inline-block;\n\
+}\n\
+</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			scope:{},
 			transclude: true,
 			template:'\
@@ -121,6 +126,7 @@ ng-class="{ \'mdl-button--raised\': raised , \'mdl-js-ripple-effect\': ripple ,\
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("Button-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}
@@ -131,13 +137,16 @@ ng-class="{ \'mdl-button--raised\': raised , \'mdl-js-ripple-effect\': ripple ,\
 angular.module("mdl")
 .directive("mdlFab",function FabDirective(mdl){
 	var stl=angular.element('<style id="mdlFab">\n\
-		</style>\n\
+mdl-fab{\n\
+	display:inline-block;\n\
+}\n\
+</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
 
 	return {
 			priority: 1,
-			restrict: 'E',
+			restrict: 'EA',
 			scope:{},
 			transclude: true,
 			template:'\
@@ -164,6 +173,7 @@ ng-class="{ \'mdl-button--mini-fab\' : miniFab ,\'mdl-js-ripple-effect\': ripple
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("Fab-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}
@@ -172,9 +182,28 @@ ng-class="{ \'mdl-button--mini-fab\' : miniFab ,\'mdl-js-ripple-effect\': ripple
 });
 
 angular.module("mdl")
-.directive("mdlEvent",function EventDirective(){
-	var stl=angular.element('<style id="mdlEvent">\n\
-		</style>\n\
+.directive("mdlCard",function SquareCardDirective(){
+	var stl=angular.element('<style id="mdlCard">\n\
+mdl-card{\n\
+	vertical-align:top;\n\
+	margin: 4px 0px 0px 4px;\n\
+	box-sizing:border-box;\n\
+}\n\
+mdl-card,card-title,card-actions,card-text{\n\
+	display:inline-block;\n\
+}\n\
+mdl-card,card-title,card-actions,card-text,card-menu{\n\
+	display:inline-block;\n\
+}\n\
+.card-square.mdl-card {\n\
+}\n\
+.card-square > .mdl-card__title {\n\
+  color: #fff;\n\
+}\n\
+.card-square > .mdl-card__supporting-text {\n\
+  width: 97%;\n\
+}\n\
+</style>\n\
 	');
 
 	function applyStyle(_style){
@@ -193,66 +222,157 @@ angular.module("mdl")
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				cardTitle:"?cardTitle",
+				cardActions:"?cardActions",
+				cardText:"?cardText",
+				cardMenu:"?cardMenu"
+			},
+			template:'\
+<!-- Square card -->\
+<div class="card-square mdl-card mdl-shadow--2dp">\
+  <div class="mdl-card__title mdl-card--expand" ng-transclude="cardTitle"></div>\
+  <div class="mdl-card__supporting-text" ng-transclude="cardText"></div>\
+  <div class="mdl-card__actions mdl-card--border" ng-transclude="cardActions"></div>\
+  <div class="mdl-card__menu" ng-transclude="cardMenu"></div>\
+</div>\
+\
+',
+			compile:function(tElm,tAttrs,transclude){
+			  	console.debug("SquareCard-compile",tElm)
+				return {
+				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
+				  	console.debug("SquareCard-pre",elm);
+				  },
+				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+
+				  	var ct=elm.find("card-title");
+				  	var cx=elm.find("card-text");
+				  	var ca=elm.find("card-actions");
+				  	var cm=elm.find("card-menu");
+
+				  	var cardBackground=attrs["background"]||"#3E4EB8";
+				  	var titleBackground=ct.attr("background")||"transparent";
+				  	var textBackground=cx.attr("background")||"white";
+				  	var actionsBackground=ca.attr("background")||"white";
+				  	var menuColor=cm.attr("color")||"white";
+				  	
+				  	//console.log(cardBackground,titleBackground,textBackground,actionsBackground,menuColor);
+
+				  	var width=attrs["width"]||"256px";
+				  	var height=attrs["height"]||"256px";
+
+				  	var card=elm[0].children[0];
+
+				  	console.log(ct,ca,cx,cm)
+				  	//console.debug("SquareCard-post",attrs,card.children,cardBackground,actionsBackground);
+				  	angular.element(card).css({
+						width:width,
+						height:height
+				  	})
+				  	angular.element(card).css({
+				  		background:cardBackground
+				  	})
+				  	angular.element(card.children[0]).css({
+				  		background:titleBackground
+				  	})
+				  	angular.element(card.children[1]).css({
+				  		background:textBackground
+				  	})
+				  	angular.element(card.children[2]).css({
+				  		background:actionsBackground
+				  	})
+				  	angular.element(card.children[3]).css({
+				  		color:menuColor
+				  	})
+				  	//if(ct.length==0)card.children[0].style.display="none"
+				  	if(cx.length==0)card.children[1].style.display="none"
+				  	if(ca.length==0)card.children[2].style.display="none"
+				  	if(cm.length==0)card.children[3].style.display="none"
+					componentHandler.upgradeElement(elm[0]);
+			  }
+			}
+		}
+	}
+});
+
+angular.module("mdl")
+.directive("mdlCardEvent",function EventCardDirective(mdl){
+	var stl=angular.element('<style id="mdlCardEvent">\n\
+mdl-card-event,card-title,card-actions{\n\
+	display:inline-block;\n\
+}\n\
+.card-event.mdl-card {\n\
+}\n\
+.card-event > .mdl-card__actions {\n\
+  border-color: rgba(255, 255, 255, 0.2);\n\
+}\n\
+.card-event > .mdl-card__title {\n\
+  align-items: flex-start;\n\
+}\n\
+.card-event > .mdl-card__title > h4 {\n\
+  margin-top: 0;\n\
+}\n\
+.card-event > .mdl-card__actions {\n\
+  display: flex;\n\
+  box-sizing:border-box;\n\
+  align-items: center;\n\
+}\n\
+.card-event > .mdl-card__actions > .material-icons {\n\
+  padding-right: 10px;\n\
+}\n\
+.card-event > .mdl-card__title,\n\
+.card-event > .mdl-card__actions,\n\
+.card-event > .mdl-card__actions > .mdl-button {\n\
+  color: #fff;\n\
+}\n\
+		</style>\n\
+	');
+	mdl.applyStyle(stl[0]);
+
+	return {
+			priority: 1,
+			restrict: 'E',
+			transclude: {
+				cardTitle:"cardTitle",
+				cardActions:"?cardActions"
 			},
 			template:'\
 <!-- Event card -->\
-<style>\
-.demo-card-event.mdl-card {\
-  width: 256px;\
-  height: 256px;\
-  background: #3E4EB8;\
-}\
-.demo-card-event > .mdl-card__actions {\
-  border-color: rgba(255, 255, 255, 0.2);\
-}\
-.demo-card-event > .mdl-card__title {\
-  align-items: flex-start;\
-}\
-.demo-card-event > .mdl-card__title > h4 {\
-  margin-top: 0;\
-}\
-.demo-card-event > .mdl-card__actions {\
-  display: flex;\
-  box-sizing:border-box;\
-  align-items: center;\
-}\
-.demo-card-event > .mdl-card__actions > .material-icons {\
-  padding-right: 10px;\
-}\
-.demo-card-event > .mdl-card__title,\
-.demo-card-event > .mdl-card__actions,\
-.demo-card-event > .mdl-card__actions > .mdl-button {\
-  color: #fff;\
-}\
-</style>\
-\
-<div class="demo-card-event mdl-card mdl-shadow--2dp">\
+<div class="card-event mdl-card mdl-shadow--2dp">\
   <div class="mdl-card__title mdl-card--expand">\
-    <h4>\
+    <h4 ng-transclude="cardTitle">\
       Featured event:<br>\
       May 24, 2016<br>\
       7-11pm\
     </h4>\
   </div>\
-  <div class="mdl-card__actions mdl-card--border">\
+  <div class="mdl-card__actions mdl-card--border" ng-transclude="cardActions">\
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">\
       Add to Calendar\
     </a>\
     <div class="mdl-layout-spacer"></div>\
-    <i class="material-icons">event</i>\
+    <i class="material-icons">{{icon}}</i>\
   </div>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Event-compile",tElm.html())
+			  	//console.debug("Event-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Event-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("Event-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Event-post",elm.html(),(transcludeFn(scope)));
-				
+				  	//console.debug("Event-post",elm.children());
+				  	var background=attrs["background"]||"#3E4EB8";
+				  	var width=attrs["width"]||"256px";
+				  	var height=attrs["height"]||"256px";
+				  	angular.element(elm.children()[0]).css({
+				  		background:background,
+						width:width,
+						height:height
+				  	})
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -260,9 +380,24 @@ angular.module("mdl")
 });
 
 angular.module("mdl")
-.directive("mdlImage",function ImageDirective(){
-	var stl=angular.element('<style id="mdlImage">\n\
-		</style>\n\
+.directive("mdlCardImage",function ImageCardDirective(){
+	var stl=angular.element('<style id="mdlCardImage">\n\
+mdl-card-image,card-title,card-actions{\n\
+	display:inline-block;\n\
+}\n\
+.card-image.mdl-card {\n\
+}\n\
+.card-image > .mdl-card__actions {\n\
+  height: 52px;\n\
+  padding: 16px;\n\
+  background: rgba(0, 0, 0, 0.2);\n\
+}\n\
+.card-image__filename {\n\
+  color: #fff;\n\
+  font-size: 14px;\n\
+  font-weight: 500;\n\
+}\n\
+</style>\n\
 	');
 
 	function applyStyle(_style){
@@ -281,112 +416,36 @@ angular.module("mdl")
 			priority: 1,
 			restrict: 'E',
 			transclude: {
+				cardTitle:"cardTitle",
+				cardActions:"?cardActions"
 			},
 			template:'\
 <!-- Image card -->\
-<style>\
-.demo-card-image.mdl-card {\
-  width: 256px;\
-  height: 256px;\
-  background: url(\'../assets/demos/image_card.jpg\') center / cover;\
-}\
-.demo-card-image > .mdl-card__actions {\
-  height: 52px;\
-  padding: 16px;\
-  background: rgba(0, 0, 0, 0.2);\
-}\
-.demo-card-image__filename {\
-  color: #fff;\
-  font-size: 14px;\
-  font-weight: 500;\
-}\
-</style>\
-\
-<div class="demo-card-image mdl-card mdl-shadow--2dp">\
-  <div class="mdl-card__title mdl-card--expand"></div>\
-  <div class="mdl-card__actions">\
-    <span class="demo-card-image__filename">Image.jpg</span>\
+<div class="card-image mdl-card mdl-shadow--2dp">\
+  <div class="mdl-card__title mdl-card--expand" ng-transclude="cardTitle"></div>\
+  <div class="mdl-card__actions" ng-transclude="cardActions">\
+    <span class="card-image__filename">Image.jpg</span>\
   </div>\
 </div>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Image-compile",tElm.html())
+			  	//console.debug("CardImage-compile",tElm)
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Image-pre",elm.html(),(transcludeFn(scope)));
+				  	//console.debug("CardImage-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Image-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlSquare",function SquareDirective(){
-	var stl=angular.element('<style id="mdlSquare">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Square card -->\
-<style>\
-.demo-card-square.mdl-card {\
-  width: 320px;\
-  height: 320px;\
-}\
-.demo-card-square > .mdl-card__title {\
-  color: #fff;\
-  background:\
-    url(\'../assets/demos/dog.png\') bottom right 15% no-repeat #46B6AC;\
-}\
-</style>\
-\
-<div class="demo-card-square mdl-card mdl-shadow--2dp">\
-  <div class="mdl-card__title mdl-card--expand">\
-    <h2 class="mdl-card__title-text">Update</h2>\
-  </div>\
-  <div class="mdl-card__supporting-text">\
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
-    Aenan convallis.\
-  </div>\
-  <div class="mdl-card__actions mdl-card--border">\
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">\
-      View Updates\
-    </a>\
-  </div>\
-</div>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Square-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Square-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Square-post",elm.html(),(transcludeFn(scope)));
-				
+				  	//console.debug("CardImage-post",elm);
+				  	var background=attrs["background"]||"#3E4EB8";
+				  	var width=attrs["width"]||"256px";
+				  	var height=attrs["height"]||"256px";
+				  	angular.element(elm.children()[0]).css({
+				  		background:background,
+						width:width,
+						height:height
+				  	})
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -1171,6 +1230,9 @@ angular.module("mdl")
 angular.module("mdl")
 .directive("mdlFixedDrawer",function FixedDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedDrawer">\n\
+m-nav,m-title,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -1208,6 +1270,7 @@ angular.module("mdl")
 				  	//console.debug("FixedDrawer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+					componentHandler.upgradeElement(elm[0]);
 				  	//console.debug("FixedDrawer-post",elm);
 				
 			  }
@@ -1219,6 +1282,9 @@ angular.module("mdl")
 angular.module("mdl")
 .directive("mdlFixedHeader",function FixedHeaderDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeader">\n\
+m-nav,m-title,m-content,m-links{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -1267,7 +1333,7 @@ angular.module("mdl")
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("FixedHeader-post",elm);
-				  	componentHandler.upgradeAllRegistered()
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}
@@ -1277,6 +1343,9 @@ angular.module("mdl")
 angular.module("mdl")
 .directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeaderDrawer">\n\
+m-nav,m-title,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -1333,6 +1402,7 @@ angular.module("mdl")
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("FixedHeaderDrawer-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}
@@ -1353,6 +1423,9 @@ angular.module("mdl")
 angular.module("mdl")
 .directive("mdlFixedTabs",function FixedTabsDirective($timeout,$sce,mdl){
 	var stl=angular.element('<style id="mdlFixedTabs">\n\
+m-tabs,m-title,m-caption,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -1423,6 +1496,7 @@ angular.module("mdl")
 				},
 				post:function(scope, elm, attrs,ctrl,transcludeFn){
 					//console.debug("FixedTabs-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				}
 			}
 		}

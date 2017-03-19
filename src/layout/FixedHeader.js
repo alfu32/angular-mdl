@@ -2,6 +2,9 @@
 angular.module("mdl")
 .directive("mdlFixedHeader",function FixedHeaderDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeader">\n\
+m-nav,m-title,m-content,m-links{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -50,7 +53,7 @@ angular.module("mdl")
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("FixedHeader-post",elm);
-				  	componentHandler.upgradeAllRegistered()
+					componentHandler.upgradeElement(elm[0]);
 			  }
 			}
 		}

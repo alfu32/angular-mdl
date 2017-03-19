@@ -2,6 +2,9 @@
 angular.module("mdl")
 .directive("mdlFixedHeaderDrawer",function FixedHeaderDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedHeaderDrawer">\n\
+m-nav,m-title,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -58,6 +61,7 @@ angular.module("mdl")
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
 				  	//console.debug("FixedHeaderDrawer-post",elm);
+					componentHandler.upgradeElement(elm[0]);
 				
 			  }
 			}

@@ -12,6 +12,9 @@
 angular.module("mdl")
 .directive("mdlFixedDrawer",function FixedDrawerDirective(mdl){
 	var stl=angular.element('<style id="mdlFixedDrawer">\n\
+m-nav,m-title,m-content{\n\
+	display:inline-block;\n\
+}\n\
 		</style>\n\
 	');
 	mdl.applyStyle(stl[0]);
@@ -49,6 +52,7 @@ angular.module("mdl")
 				  	//console.debug("FixedDrawer-pre",elm);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
+					componentHandler.upgradeElement(elm[0]);
 				  	//console.debug("FixedDrawer-post",elm);
 				
 			  }
