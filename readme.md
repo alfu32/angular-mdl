@@ -15,8 +15,8 @@ https://getmdl.io/components/index.html
 |------------------|-------------|-------|--------|-----------------------------------------------------------------------------------------------------|----------------------|
 | accesories       |      Done   |       |      - |                                                                                                     | :black_circle:       |
 | badge            |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_badges.png" width="28" style="filter: grayscale(100%);">     | :black_circle:       |
-| button           |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_buttons.png" width="28" style="filter: grayscale(100%);">    | :black_circle:       |
-| card             |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_cards.png" width="28" style="filter: grayscale(100%);">      | :white_large_square: |
+| button           |    Review   |       |      - |<img src="https://getmdl.io/assets/comp_buttons.png" width="28" style="filter: grayscale(100%);">    | :black_circle:       |
+| card             |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_cards.png" width="28" style="filter: grayscale(100%);">      | :black_circle:       |
 | checkbox         |     To Do   |       |      - |                                                                                                     | :white_large_square: |
 | chip             |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_chips.png" width="28" style="filter: grayscale(100%);">      | :white_large_square: |
 | data-table       |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_tables.png" width="28" style="filter: grayscale(100%);">     | :white_large_square: |
@@ -24,7 +24,7 @@ https://getmdl.io/components/index.html
 | footer           |     To Do   |       |      - |                                                                                                     | :white_large_square: |
 | grid             |     To Do   |       |      - |                                                                                                     | :white_large_square: |
 | icon-toggle      |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_toggles.png" width="28" style="filter: grayscale(100%);">    | :white_large_square: |
-| layout           |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_layout.png" width="28" style="filter: grayscale(100%);">     | :black_circle:       |
+| layout           |    Review   |       |      - |<img src="https://getmdl.io/assets/comp_layout.png" width="28" style="filter: grayscale(100%);">     | :black_circle:       |
 | list             |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_lists.png" width="28" style="filter: grayscale(100%);">      | :white_large_square: |
 | menu             |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_menus.png" width="28" style="filter: grayscale(100%);">      | :white_large_square: |
 | progress         |     To Do   |       |      - |                                                                                                     | :white_large_square: |
