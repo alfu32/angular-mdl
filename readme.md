@@ -42,8 +42,8 @@ https://getmdl.io/components/index.html
 - [x] accesories 
 - [x] badge      
 - [x] button     
-- [ ] card       
-- [ ] checkbox   
+- [x] card       
+- [x] checkbox   
 - [ ] chip       
 - [ ] data-table 
 - [ ] dialog     
