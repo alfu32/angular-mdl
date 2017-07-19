@@ -17,7 +17,7 @@ https://getmdl.io/components/index.html
 | badge            |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_badges.png" width="28" style="filter: grayscale(100%);">     | :black_circle:       |
 | button           |    Review   |       |      - |<img src="https://getmdl.io/assets/comp_buttons.png" width="28" style="filter: grayscale(100%);">    | :black_circle:       |
 | card             |      Done   |       |      - |<img src="https://getmdl.io/assets/comp_cards.png" width="28" style="filter: grayscale(100%);">      | :black_circle:       |
-| checkbox         |     To Do   |       |      - |                                                                                                     | :white_large_square: |
+| checkbox         |    Review   |       |      - |                                                                                                     | :black_circle:       |
 | chip             |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_chips.png" width="28" style="filter: grayscale(100%);">      | :white_large_square: |
 | data-table       |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_tables.png" width="28" style="filter: grayscale(100%);">     | :white_large_square: |
 | dialog           |     To Do   |       |      - |<img src="https://getmdl.io/assets/comp_dialog.png" width="28" style="filter: grayscale(100%);">     | :white_large_square: |

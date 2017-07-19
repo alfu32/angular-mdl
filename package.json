@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test.js",
-    "start":"autobuild.js"
+    "build":"autobuild.js",
+    "start":"start http://localhost:8080/test/index.html & http-server"
   },
   "repository": {
     "type": "git",

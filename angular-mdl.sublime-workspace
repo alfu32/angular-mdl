@@ -4,6 +4,78 @@
 		"selected_items":
 		[
 			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"ma",
+				"maina\tvoid main(string[] args) { … }"
+			],
+			[
+				"My",
+				"MyStruct"
+			],
+			[
+				"inc",
+				"inc\t#include <…>"
+			],
+			[
+				"in",
+				"inc\t#include <…>"
+			],
+			[
+				"m",
+				"malloc"
+			],
+			[
+				"input",
+				"inputLength"
+			],
+			[
+				"inp",
+				"inputLength"
+			],
+			[
+				"new",
+				"new_array"
+			],
+			[
+				"arra",
+				"array_size"
+			],
+			[
+				"thread",
+				"threads_count"
+			],
+			[
+				"vbuf",
+				"vbuff_fill"
+			],
+			[
+				"vbuff",
+				"vbuff_init"
+			],
+			[
+				"screen",
+				"SCREENW"
+			],
+			[
+				"buff",
+				"buff_fill"
+			],
+			[
+				"EACHXY",
+				"EACH_XY"
+			],
+			[
+				"test",
+				"test_01"
+			],
+			[
+				"serie",
+				"series_vtab"
+			],
+			[
 				"layou",
 				"layoutContent"
 			],
@@ -28,308 +100,245 @@
 	"buffers":
 	[
 		{
-			"file": "autobuild.js",
+			"file": "/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
 			"settings":
 			{
-				"buffer_size": 331,
+				"buffer_size": 101,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "generate.js",
+			"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.c",
 			"settings":
 			{
-				"buffer_size": 1841,
+				"buffer_size": 374,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "extract.json",
+			"file": "/C/Users/alf/Documents/Development/CLA/proja/makefile",
 			"settings":
 			{
-				"buffer_size": 44876,
+				"buffer_size": 530,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "make.js",
+			"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.h",
 			"settings":
 			{
-				"buffer_size": 893,
+				"buffer_size": 315,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/layout/FixedDrawer.html",
+			"file": "/C/Users/alf/Documents/Development/CLA/proja/main.c",
 			"settings":
 			{
-				"buffer_size": 380,
+				"buffer_size": 1347,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/layout/FixedHeader.html",
+			"file": "/C/Users/alf/Documents/Development/CLA/proja/libuv-01-idle.c",
 			"settings":
 			{
-				"buffer_size": 381,
+				"buffer_size": 681,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/layout/FixedHeaderDrawer.html",
+			"file": "/C/Users/alf/Documents/Development/DLang/tut/t03_value_vs_ref.d",
 			"settings":
 			{
-				"buffer_size": 406,
+				"buffer_size": 231,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/layout/FixedTabs.html",
+			"file": "/C/Users/alf/Documents/Development/DLang/tut/t031_templates.d",
 			"settings":
 			{
-				"buffer_size": 753,
+				"buffer_size": 747,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/index.html",
+			"contents": "echo PATH\nSET PATH=%PATH%;D:\\Runtime\\nodejs\nSET PATH=%PATH%;D:\\Runtime\\nginx-1.11.6\\\nSET PATH=%PATH%;D:\\Runtime\\php-7.0.13-nts-Win32-VC14-x86\nSET PATH=%PATH%;D:\\Runtime\\python-3.5.1-embed-win32\nSET PATH=%PATH%;D:\\Runtime\\Ruby23-x64\\bin\nSET PATH=%PATH%;D:\\Runtime\\pgsql\\bin\nSET PATH=%PATH%;D:\\Runtime\\mariadb-10.1.19-winx64\\bin\n",
+			"file": "/D/Runtime/sysPATH.bat",
+			"file_size": 335,
+			"file_write_time": 131378299350344531,
 			"settings":
 			{
-				"buffer_size": 4083,
+				"buffer_size": 327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "nginx version: nginx/1.11.6\nUsage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]\n\nOptions:\n  -?,-h         : this help\n  -v            : show version and exit\n  -V            : show version and configure options then exit\n  -t            : test configuration and exit\n  -T            : test configuration, dump it and exit\n  -q            : suppress non-error messages during configuration testing\n  -s signal     : send signal to a master process: stop, quit, reopen, reload\n  -p prefix     : set prefix path (default: NONE)\n  -c filename   : set configuration file (default: conf/nginx.conf)\n  -g directives : set global directives out of configuration file\n\n",
+			"file": "/D/Runtime/man/nginx.txt",
+			"file_size": 0,
+			"file_write_time": 131378301143831665,
+			"settings":
+			{
+				"buffer_size": 686,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Runtime/nginx-1.11.6/conf/nginx.conf",
+			"settings":
+			{
+				"buffer_size": 2688,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/list.html",
+			"file": "/D/Documents/linkedin",
 			"settings":
 			{
-				"buffer_size": 47,
+				"buffer_size": 1292,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "Software Engineer with a demonstrated history of w"
+			}
+		},
+		{
+			"file": "/D/Runtime/nginx-1.11.6/conf/fastcgi_params",
+			"settings":
+			{
+				"buffer_size": 1007,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Runtime/nginx-1.11.6/stop.bat",
+			"settings":
+			{
+				"buffer_size": 13,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/component.tests.json",
+			"file": "/D/Runtime/nginx-1.11.6/start.bat",
 			"settings":
 			{
-				"buffer_size": 801,
+				"buffer_size": 96,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/buttons/Buttons.html",
+			"contents": "<?php\nphpinfo();\n?>",
+			"file": "/D/Runtime/nginx-1.11.6/html/phpinfo.php",
+			"file_size": 21,
+			"file_write_time": 131378313314496613,
 			"settings":
 			{
-				"buffer_size": 591,
+				"buffer_size": 19,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/alf/Documents/Development/DLang/tut/templates_text/tax.mustache",
+			"settings":
+			{
+				"buffer_size": 148,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/buttons/Fabs.html",
+			"file": "/C/Users/alf/Documents/Development/DLang/tut/mustache_d/win.mak",
 			"settings":
 			{
-				"buffer_size": 576,
-				"encoding": "UTF-8",
+				"buffer_size": 342,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/components/Cards.html",
+			"file": "/C/app/dm/bin/sc.ini",
 			"settings":
 			{
-				"buffer_size": 4003,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/_services/MDL.js",
-			"settings":
-			{
-				"buffer_size": 730,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/accesories/Spacer.js",
-			"settings":
-			{
-				"buffer_size": 665,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/FixedDrawer.js",
-			"settings":
-			{
-				"buffer_size": 1627,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/FixedHeader.js",
-			"settings":
-			{
-				"buffer_size": 1865,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/FixedHeaderDrawer.js",
-			"settings":
-			{
-				"buffer_size": 2297,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/FixedTabs.js",
-			"settings":
-			{
-				"buffer_size": 2839,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/ScrollableTabs.js",
-			"settings":
-			{
-				"buffer_size": 2783,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/ScrollingHeader.js",
-			"settings":
-			{
-				"buffer_size": 2191,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/Transparent.js",
-			"settings":
-			{
-				"buffer_size": 2478,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/WaterfallHeader.js",
-			"settings":
-			{
-				"buffer_size": 2963,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/layout/Layout.js",
-			"settings":
-			{
-				"buffer_size": 2651,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/button/Fab.js",
-			"settings":
-			{
-				"buffer_size": 1351,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/button/Button.js",
-			"settings":
-			{
-				"buffer_size": 1285,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/badge/Badge.js",
-			"settings":
-			{
-				"buffer_size": 790,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/badge/BadgeOverlap.js",
-			"settings":
-			{
-				"buffer_size": 883,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/card/Card.js",
-			"settings":
-			{
-				"buffer_size": 3325,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "readme.md",
-			"settings":
-			{
-				"buffer_size": 5662,
-				"encoding": "UTF-8",
+				"buffer_size": 212,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/compilesrc.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "Package Control: ",
+		"last_filter": "pack",
 		"selected_items":
 		[
 			[
-				"Package Control: ",
+				"pack",
 				"Package Control: Install Package"
 			],
 			[
-				"pack",
-				"Install Package Control"
+				"Package Control: ",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 432.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 146.0,
 		"history":
 		[
+			"sublime.log_commands(True)"
 		]
 	},
 	"distraction_free":
@@ -343,98 +352,144 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/alf/Documents/Development/angular-mdl",
-		"/C/Users/alf/Documents/Development/angular-mdl/build",
-		"/C/Users/alf/Documents/Development/angular-mdl/src",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/card",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/layout",
-		"/C/Users/alf/Documents/Development/angular-mdl/test"
+		"/C/Users/alf/Documents/Development/CLA",
+		"/C/Users/alf/Documents/Development/CLA/proja",
+		"/C/Users/alf/Documents/Development/CLA/proja/preprocessor-out"
 	],
 	"file_history":
 	[
-		"/C/app/tv-maxe-win/tvmaxe.exe.log",
-		"/C/Users/alf/AppData/Local/Temp/jusched.log",
-		"/C/Users/alf/AppData/Local/Temp/tmpui6qbq",
-		"/C/Users/alf/AppData/Local/Temp/tmp_iowdm",
-		"/C/Users/alf/AppData/Local/Temp/tmpmoqe_x",
-		"/C/Users/alf/AppData/Local/Temp/tmptpwm0i",
-		"/C/Program Files (x86)/SopCast/config.xml",
-		"/C/app/Ext2Fsd-0.68/Ext2Fsd/Setup/Setup.bat",
-		"/G/Applications/SopCast/channellist/chlist_adv.xml",
-		"/C/Users/alf/Downloads/SopCast/install.bat",
-		"/C/app/Ext2Fsd-0.68/Ext2Fsd/Setup/Uninstall.bat",
-		"/C/app/ext2explorelog.log",
-		"/C/Users/alf/Downloads/Ext2Fsd-0.68/Ext2Fsd/Setup/Setup.bat",
-		"/F/Applications/clover/config.ini",
-		"/F/Applications/clv_sp3.3.2.03031/unreg.bat",
-		"/F/Applications/clv_sp3.3.2.03031/reg.bat",
-		"/C/Users/alf/Downloads/tcmd900ax32_64/INSTALL64.INF",
-		"/C/Users/alf/Downloads/tcmd900ax32_64/INSTALL.INF",
-		"/C/Users/alf/Documents/Development/youtube-dl/youtube-dl.zsh",
-		"/C/Users/alf/Documents/Development/youtube-dl/README.md",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/card/ImageCard.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/card/EventCard.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/card/SquareCard.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/card/Image.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/build/ngmdl.min.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/gitignore",
-		"/C/Users/alf/Documents/Development/angular-mdl/.gitignore",
-		"/C/Users/alf/Documents/Development/angular-mdl/gitupd.bat",
+		"/D/Runtime/shell.bat",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/example/basic.d",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/src/mustache.d",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/example/projects.d",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/example/basic.mustache",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/meson.build",
+		"/C/Users/alf/Documents/Development/DLang/tut/t03-value-vs-ref.d",
+		"/C/app/dmd2/README.TXT",
+		"/C/Users/alf/Downloads/OFX 2.2.0 schema/OFX_Common.xsd",
+		"/C/Users/alf/Downloads/OFX 2.2.0 schema/OFX_Banking.xsd",
+		"/C/Users/alf/Documents/BE40 0635 1072 7263 2017-04-22 01-36-29 1.csv",
+		"/C/Users/alf/Documents/Development/CLA/proja/preprocessor-out/libuv-preproc.c",
+		"/C/Users/alf/Documents/Development/CLA/proja/bin/libuv-preproc.exe",
+		"/C/Users/alf/Documents/Development/CLA/proja/libuvtest-lko.c",
+		"/C/Users/alf/Documents/Development/CLA/proj8/funclib.h",
+		"/C/Users/alf/Documents/Development/CLA/proj8/funclib.c",
+		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/cpptypes.h",
+		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/tui.c",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/libtest01.h",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/libtest01.c",
+		"/C/Users/alf/Documents/Development/libuv/libuv/README.md",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/Makefile",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/uv.h",
+		"/C/Users/alf/Documents/Development/CLA/test4.c",
+		"/C/Users/alf/Documents/Development/CLA/test5.c",
+		"/C/Users/alf/Documents/Development/CLA/proj8/fact_main.c",
+		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/mouseinput.c",
+		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/tui.h",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/test01.c",
+		"/C/Users/alf/Documents/Development/CLA/proja/main.c",
+		"/C/Users/alf/Documents/Development/CLA/proj8/makefile",
+		"/C/Users/alf/Documents/Development/CLA/proj8/makefile.a0",
+		"/C/Users/alf/Documents/Development/CLA/libuv-x86/readme",
+		"/C/Users/alf/Documents/Development/libuv/libuv/Makefile.mingw",
+		"/C/Users/alf/Documents/Development/libuv/libuv/configure.ac",
+		"/C/MinGW/lib/gcc/mingw32/5.3.0/include/uv.h",
+		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/libuv-x86-v1.9.1.build10/README.md",
+		"/C/Users/alf/Documents/Development/CLA/proj8/fact.c",
+		"/C/Users/alf/Documents/Development/CLA/proj8/fact.h",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/FL_insurance_sample.csv",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/test.log",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/lib_mysqludf_udf.c",
+		"/D/Videos/povesti/xfaudio.sh",
+		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/printat.c",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/winman.c",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/vbuffer.c",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/vbuffer.h",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/winthread.c",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/sleep.c",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/udf_arg_count.c",
+		"/C/Users/alf/Documents/Development/mariadb/dbtest-init.sql",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/build.cmd",
+		"/C/app/mariadb-5.5.29-winx64/my.ini",
+		"/C/app/mariadb-5.5.29-winx64/mysqld.help.txt",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/lib_mysqludf_udf.sql",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc.hs",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/csvfile.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pk.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/key.txt",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/build.bat",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/__test.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/test.sql",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/make.bat",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/csvfile.h",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/virtual_csv.h",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/virtual_csv.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/ext_init.c",
+		"/C/Users/alf/Documents/Development/luhn/luhn.js",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/z-test-vaargs.c",
+		"/C/app/mariadb-10.1.22-win32/stop.bat",
+		"/C/app/mariadb-10.1.22-win32/start.bat",
+		"/C/app/mariadb-10.1.22-win32/lib/plugin/reg-example.sql",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/build-udf_arg_count/reg-udf_arg_count.sql",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/example.c",
+		"/D/Videos/povesti/xaudio.sh",
+		"/C/Users/alf/Documents/Development/mariadb/UDF/build-example/reg-example.sql",
+		"/D/Videos/youtubedl.txt",
+		"/D/Videos/batch.dl.bat",
+		"/D/Videos/povesti/xaaudio.sh",
+		"/C/app/mariadb-5.5.29-winx64/my4G.ini",
+		"/C/app/mariadb-5.5.29-winx64/my-medium.ini",
+		"/C/app/mariadb-5.5.29-winx64/my-large.ini",
+		"/C/app/mariadb-5.5.29-winx64/my-innodb-heavy-4G.ini",
+		"/C/app/mariadb-5.5.29-winx64/my-huge.ini",
+		"/C/app/mariadb-5.5.29-winx64/my-small.ini",
+		"/C/app/mariadb-5.5.29-winx64/README",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.c.pk",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.tx.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pk.test.encoded",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.test.decoded",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.test.encoded",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pks.test",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pk/COFF_SYMBOLS",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pk/.tls",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pk/.text",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc.7z",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc.pk",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/pack.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arch",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/rc2.7z",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc - Copy/exturl.c",
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc/exturl.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/urlparser.hex",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/u_20020502.log",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/u_20001001.log",
+		"/C/Users/alf/Documents/Development/sqlite/csvmbpg/ext_init.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/csv.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvmbpg/virtual_csvmbpg.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvmbpg.tar",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/makedll.bat",
+		"/C/Users/alf/Documents/Development/sqlite/csvfile/XMLtoSQLite.php",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/series.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/testseries.bat",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/testseries.sql",
 		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/compilesrc.sublime-build",
-		"/C/Users/alf/Documents/Development/angular/index.html",
-		"/C/Users/alf/Documents/Development/angular-mdl/test/components/layout-fixed-tabs-test.html",
-		"/C/Users/alf/Documents/Development/angular-mdl/package.json",
-		"/C/Users/alf/.ssh/id_rsa.pub",
-		"/C/Users/alf/Documents/Development/angular-mdl/readme.md",
-		"/C/Users/alf/Documents/Development/angular-mdl/repo.txt",
-		"/C/Users/alf/.ssh/id_rsa",
-		"/C/Users/alf/Documents/Development/angular-mdl/extract.js",
-		"/C/Users/alf/Desktop/test/client.c",
-		"/C/Users/alf/Desktop/test/server.c",
-		"/C/Users/alf/Documents/Development/angular-mdl/_autobuild cmd",
-		"/C/Users/alf/Documents/Development/angular-mdl/build/ngmdl.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/badge/BadgeOnTextIcon.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/badge/BadgeOnIconIcon.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/badge/BadgeOnTextText.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabRipple.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabDisabled.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabColoredRipple.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabColored.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/Icon.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabMini.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/button/FabMiniColored.js",
-		"/C/Users/alf/Documents/Development/angular-mdl/src/_services/Style.js",
-		"/C/Users/alf/Documents/Development/baby-utils/index.html",
-		"/C/Users/alf/Documents/Development/excelAddins/test02/test-002-manifest.xml",
-		"/C/Users/alf/Documents/Development/excelAddins/test02/index.html",
-		"/C/Users/alf/Downloads/index.html",
-		"/C/Users/alf/Desktop/test/test.c",
-		"/C/Users/alf/Desktop/test/tcp/client.c",
-		"/C/Users/alf/Desktop/test/tcp/server.c",
-		"/C/Users/alf/Desktop/test/autobuild-win.js",
-		"/C/Users/alf/Desktop/test/count.c",
-		"/C/Temp/svg.svg",
-		"/C/Users/alf/Documents/Development/angular/img/colorpicker.svg",
-		"/C/bin/new-file.reg",
-		"/C/Users/alf/Documents/Development/excelAddins/test02/bsconfig.json",
-		"//DESKTOP-BE3AIQR/Users/alf/Documents/Development/excelAddins/test02/resource.html",
-		"//DESKTOP-BE3AIQR/Users/alf/Documents/Development/excelAddins/test02/index.html",
-		"/C/Program Files/Sublime Text 3/sublime.py",
-		"/C/bin/youtubedl/New HTML Document.html",
-		"/C/bin/ShellNew/new.reg",
-		"/C/bin/ShellNew/new.js",
-		"/C/bin/ShellNew/new.css",
-		"/C/bin/ShellNew/run.bat",
-		"/C/bin/ShellNew/run.cmd",
-		"/C/Windows/ShellNew/index.html",
-		"/C/bin/ShellNew/index.html",
-		"/C/bin/New HTML Document.html",
-		"/C/bin/cmd.reg",
-		"/C/Users/alf/Documents/Development/excelAddins/test01/resource.html"
+		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/gcc.sublime-build",
+		"/D/Runtime/reg-cmd-background.reg",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/lib-StringClass.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator_token.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator_tests.c",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator-file.c",
+		"/D/Runtime/reg-cmd.reg",
+		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/lib-tokenizer.c",
+		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/test.c",
+		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/lib-tokenizer.h",
+		"/C/Users/alf/Documents/Development/sqlite/csvtab/package.txt"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -448,6 +503,94 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"(",
+			"document_root",
+			"80",
+			"Account",
+			";",
+			",",
+			"uv_loop_init",
+			"\\n#",
+			";\n",
+			"uv_run",
+			"uv_default_loop",
+			"uv_init",
+			"uv_loop_init",
+			"_q",
+			"test",
+			"DWORD",
+			"LIBVERSION",
+			"build",
+			"example",
+			"udf_arg_count",
+			"\\n",
+			"playlist",
+			"FORMAT",
+			"%(",
+			"OUTPUT",
+			"TEMPLATE",
+			"name",
+			"output",
+			"playlist",
+			"list",
+			"Usage",
+			"udf_arg_count_init",
+			"udf_initid_decimals_init",
+			"lib_mysqludf_udf_info_init",
+			"plugins",
+			"stop",
+			"bin",
+			"so",
+			"\\n\\n",
+			"#",
+			"\\n\\n",
+			"#",
+			"0a01149dcd9d0000",
+			"\\n",
+			" ",
+			"0A",
+			"\\n",
+			" ",
+			"b",
+			"i",
+			"bin",
+			"f",
+			"*********************",
+			"      int main(void) { \n        float x,y; \n        int i,j; \n        x = 1.5; y = 2.0; \n        i = 2; j = 3; \n        x = x * y + i / j; \n        printf(\"%f\",x); \n        return 0; \n    }",
+			"}",
+			"csvfile_columns",
+			",",
+			"cols",
+			"csvfile_columns",
+			"comment",
+			";",
+			"csvfile_open",
+			"argv",
+			"seriesConnect",
+			"sqlite3_vtab",
+			"SQLITE_ERROR",
+			"SQLITE_",
+			"SQLITE_OK",
+			"nArg",
+			"3",
+			"seriesConnect",
+			"cFieldDelimiter",
+			"sqlite3_result_",
+			"sqlite3_vtab_cursor",
+			"sqlite3_context",
+			"sqlite3_vtab_cursor",
+			"typedef",
+			"series_vtab",
+			"seriesConnect",
+			"SQLITE_OMIT_VIRTUALTABLE",
+			"seriesConnect",
+			"csvtabCreate",
+			"Create",
+			"argv",
+			"ltrim",
+			"1",
+			"__dirname",
+			"toto4",
 			"demo",
 			"square",
 			"demo",
@@ -469,6 +612,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\r\\n",
+			" ",
 			"\"}\\n,\\n",
 			"\"}\\n,",
 			"\",\\n\\t\"",
@@ -480,313 +625,30 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 24,
+			"selected": 11,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "autobuild.js",
+					"file": "/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 331,
+						"buffer_size": 101,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								188,
-								188
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "generate.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1116,
-								1116
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "extract.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 44876,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1,
-								1
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "make.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 893,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								844,
-								844
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "test/components/layout/FixedDrawer.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 380,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								294
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "test/components/layout/FixedHeader.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 381,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								115,
-								115
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "test/components/layout/FixedHeaderDrawer.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 406,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								406,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "test/components/layout/FixedTabs.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 753,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								213,
-								213
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "test/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4083,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1593,
-								1593
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 18.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "test/list.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								47,
-								47
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "test/component.tests.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								788,
-								788
+								101,
+								101
 							]
 						],
 						"settings":
@@ -797,203 +659,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "test/components/buttons/Buttons.html",
+					"buffer": 1,
+					"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 591,
+						"buffer_size": 374,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								411,
-								433
-							],
-							[
-								483,
-								498
+								229,
+								229
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "test/components/buttons/Fabs.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								299,
-								299
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "test/components/Cards.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4003,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3706,
-								3706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1821.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/_services/MDL.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								501,
-								501
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "src/accesories/Spacer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 665,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								325,
-								325
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/layout/FixedDrawer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1627,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								324,
-								265
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/layout/FixedHeader.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1865,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								175,
-								175
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/C++/C.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1003,229 +691,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "src/layout/FixedHeaderDrawer.js",
+					"buffer": 2,
+					"file": "/C/Users/alf/Documents/Development/CLA/proja/makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2297,
+						"buffer_size": 530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								220,
-								220
+								530,
+								530
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "src/layout/FixedTabs.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2839,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								297,
-								297
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "src/layout/ScrollableTabs.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2783,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1269,
-								1269
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "src/layout/ScrollingHeader.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2191,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "src/layout/Transparent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2478,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "src/layout/WaterfallHeader.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1642,
-								1656
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 108.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "src/layout/Layout.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2651,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								960,
-								960
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "src/button/Fab.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1324,
-								1324
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1235,83 +719,117 @@
 					"type": "text"
 				},
 				{
-					"buffer": 26,
-					"file": "src/button/Button.js",
+					"buffer": 3,
+					"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1285,
+						"buffer_size": 315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1258,
-								1258
+								207,
+								207
+							],
+							[
+								226,
+								226
+							],
+							[
+								286,
+								286
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "src/badge/Badge.js",
+					"buffer": 4,
+					"file": "/C/Users/alf/Documents/Development/CLA/proja/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 790,
+						"buffer_size": 1347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								768,
-								768
+								375,
+								375
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/alf/Documents/Development/CLA/proja/libuv-01-idle.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485,
+								485
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
-					"file": "src/badge/BadgeOverlap.js",
+					"buffer": 6,
+					"file": "/C/Users/alf/Documents/Development/DLang/tut/t03_value_vs_ref.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 883,
+						"buffer_size": 231,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								861,
-								861
+								106,
+								106
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/D/D.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1322,60 +840,346 @@
 					"type": "text"
 				},
 				{
-					"buffer": 29,
-					"file": "src/card/Card.js",
+					"buffer": 7,
+					"file": "/C/Users/alf/Documents/Development/DLang/tut/t031_templates.d",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3325,
+						"buffer_size": 747,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								874,
-								874
+								408,
+								408
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/D/D.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/D/Runtime/sysPATH.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								84,
+								84
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
-					"file": "readme.md",
+					"buffer": 9,
+					"file": "/D/Runtime/man/nginx.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5662,
+						"buffer_size": 686,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								710,
-								710
+								684,
+								684
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/Runtime/nginx-1.11.6/conf/nginx.conf",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1640,
+								1640
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 473.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/D/Documents/linkedin",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Software Engineer with a demonstrated history of w",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/D/Runtime/nginx-1.11.6/conf/fastcgi_params",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/D/Runtime/nginx-1.11.6/stop.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/D/Runtime/nginx-1.11.6/start.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 96,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/D/Runtime/nginx-1.11.6/html/phpinfo.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/C/Users/alf/Documents/Development/DLang/tut/templates_text/tax.mustache",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML Mustache/Syntaxes/HTMLMustache.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/C/Users/alf/Documents/Development/DLang/tut/mustache_d/win.mak",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/C/app/dm/bin/sc.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
@@ -1383,7 +1187,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1414,17 +1218,17 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 88.0
+		"height": 247.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/User/mock.sublime-build",
 	"project": "angular-mdl.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
