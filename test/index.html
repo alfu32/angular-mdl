@@ -29,6 +29,10 @@
 	<script type="text/javascript" src="../src/badge/BadgeOverlap.js"></script>
 	<script type="text/javascript" src="../src/card/Card.js"></script>
 	<script type="text/javascript" src="../src/checkbox/Check.js"></script>
+
+	<script type="text/javascript" src="../test/components/CheckboxTest.controller.js"></script>
+	<script type="text/javascript" src="../src/chip/Chip.js"></script>
+	<script type="text/javascript" src="../test/components/ChipTest.controller.js"></script>
 	<script type="text/javascript">
 		function $require(url){
 			return new Promise(function(resolve,reject){
@@ -44,7 +48,7 @@
 
 		}
 		(function(){
-			angular.module("angular-mdl.tests",["ngRoute","mdl"])
+			angular.module("angular-mdl.tests",["ngRoute","mdl","test.checkbox","test.chips"])
 			.config(function($routeProvider) {
 			    $routeProvider
 			    .when("/", {

@@ -6,5 +6,6 @@
 	{"category":"buttons","name":"Fabs","route":"/buttons/Fabs","test":"./components/buttons/Fabs.html"},
 	{"category":"buttons","name":"Buttons","route":"/buttons/Buttons","test":"./components/buttons/Buttons.html"},
 	{"category":"cards","name":"Cards","route":"/cards","test":"./components/Cards.html"},
-	{"category":"input","name":"Checkbox","route":"/checkbox","test":"./components/Checkbox.html"}
+	{"category":"input","name":"Checkbox","route":"/checkbox","test":"./components/Checkbox.html"},
+	{"category":"input","name":"Checkbox","route":"/chips","test":"./components/Chips.html"}
 ]

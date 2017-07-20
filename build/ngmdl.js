@@ -296,8 +296,8 @@ mdl-card,card-title,card-actions,card-text,card-menu{\n\
 });
 
 angular.module("mdl")
-.directive("mdlCheckOff",function CheckOffDirective(){
-	var stl=angular.element('<style id="mdlCheckOff">\n\
+.directive("mdlCheck",function CheckOnDirective(){
+	var stl=angular.element('<style id="mdlCheck">\n\
 		</style>\n\
 	');
 
@@ -312,37 +312,43 @@ angular.module("mdl")
 		}
 	}
 	applyStyle(stl[0]);
-
+	console.debug("decl mdlCheck");
+	var uid=0;
 	return {
 			priority: 1,
 			restrict: 'E',
-			transclude: {
+			transclude:true,
+			scope:{
+				"bindModel":"=ngModel"
 			},
 			template:'\
-<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">\
-  <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">\
-  <span class="mdl-checkbox__label">Checkbox</span>\
+<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{uid}}">\
+  <input type="checkbox" id="checkbox-{{uid}}" class="mdl-checkbox__input" ng-model="bindModel">\
+  <span class="mdl-checkbox__label" ng-transclude></span>\
 </label>\
 \
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("CheckOff-compile",tElm.html())
+			  	console.debug("CheckOn-compile",tElm,tAttrs);
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("CheckOff-pre",elm.html(),(transcludeFn(scope)));
+				  	uid++;
+				  	scope.uid=uid;
+				  	console.debug("CheckOn-pre",scope, elm, attrs);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("CheckOff-post",elm.html(),(transcludeFn(scope)));
+					componentHandler.upgradeElement(elm[0]);
+				  	console.debug("CheckOn-post",scope, elm, attrs,ctrl);
 				
 			  }
 			}
 		}
 	}
 });
-
 angular.module("mdl")
-.directive("mdlCheckOn",function CheckOnDirective(){
-	var stl=angular.element('<style id="mdlCheckOn">\n\
+.directive("mdlChip",function BasicDirective(){
+	var stl=angular.element('<style id="mdlChip">\n\
+		mdl-chip{box-sizing: border-box;}\n\
 		</style>\n\
 	');
 
@@ -357,252 +363,35 @@ angular.module("mdl")
 		}
 	}
 	applyStyle(stl[0]);
-
+// image text action
 	return {
 			priority: 1,
 			restrict: 'E',
+			scope:{},
 			transclude: {
+				"mdlChipAction":"?mdlChipAction"
 			},
 			template:'\
-<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">\
-  <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>\
-  <span class="mdl-checkbox__label">Checkbox</span>\
-</label>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("CheckOn-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("CheckOn-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("CheckOn-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlBasic",function BasicDirective(){
-	var stl=angular.element('<style id="mdlBasic">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Basic Chip -->\
-<span class="mdl-chip">\
-    <span class="mdl-chip__text">Basic Chip</span>\
+<!-- Chip -->\
+<span class="mdl-chip {{chipType}}">\
+    <img ng-if="mIcon" class="mdl-chip__contact" src="{{mIcon}}"></img>\
+    <span ng-if="mContact && !mIcon" class="mdl-chip__contact mdl-color--teal mdl-color-text--white">{{mContact}}</span>\
+    <span class="mdl-chip__text">{{mText}}</span>\
+    <span ng-if="hasAction" class="mdl-chip__action" ng-transclude="mdlChipAction"></span>\
 </span>\
 ',
 			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Basic-compile",tElm.html())
+			  	//console.debug("Basic-compile",tElm.html())
 				return {
 				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Basic-pre",elm.html(),(transcludeFn(scope)));
+				  	console.debug("mdlChip-pre",elm[0].children[0].children);
 				  },
 				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Basic-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
+				  	scope.mIcon=attrs["mdlChipIcon"]||false;
+				  	scope.mText=attrs["mdlChipText"]||"default";
+				  	scope.mContact=attrs["mdlChipContact"]||false;
 
-angular.module("mdl")
-.directive("mdlButton",function ButtonDirective(){
-	var stl=angular.element('<style id="mdlButton">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Button Chip -->\
-<button type="button" class="mdl-chip">\
-    <span class="mdl-chip__text">Button Chip</span>\
-</button>\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Button-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Button-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Button-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlContact",function ContactDirective(){
-	var stl=angular.element('<style id="mdlContact">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Contact Chip -->\
-<span class="mdl-chip mdl-chip--contact">\
-    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">A</span>\
-    <span class="mdl-chip__text">Contact Chip</span>\
-</span>\
-\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Contact-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Contact-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Contact-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlDeletable",function DeletableDirective(){
-	var stl=angular.element('<style id="mdlDeletable">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Deletable Chip -->\
-<span class="mdl-chip mdl-chip--deletable">\
-    <span class="mdl-chip__text">Deletable Chip</span>\
-    <button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>\
-</span>\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("Deletable-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Deletable-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("Deletable-post",elm.html(),(transcludeFn(scope)));
-				
-			  }
-			}
-		}
-	}
-});
-
-angular.module("mdl")
-.directive("mdlDeletableContact",function DeletableContactDirective(){
-	var stl=angular.element('<style id="mdlDeletableContact">\n\
-		</style>\n\
-	');
-
-	function applyStyle(_style){
-		var style=document.querySelectorAll("style#"+_style.id);
-		if(style.length==0){
-			try{
-				document.body.appendChild(_style);
-			}catch(err){
-				setTimeout(function(){applyStyle(_style)},1000);
-			}
-		}
-	}
-	applyStyle(stl[0]);
-
-	return {
-			priority: 1,
-			restrict: 'E',
-			transclude: {
-			},
-			template:'\
-<!-- Deletable Contact Chip -->\
-<span class="mdl-chip mdl-chip--contact mdl-chip--deletable">\
-    <img class="mdl-chip__contact" src="/templates/dashboard/images/user.jpg"></img>\
-    <span class="mdl-chip__text">Deletable Contact Chip</span>\
-    <a href="#" class="mdl-chip__action"><i class="material-icons">cancel</i></a>\
-</span>\
-',
-			compile:function(tElm,tAttrs,transclude){
-			  	console.debug("DeletableContact-compile",tElm.html())
-				return {
-				  pre:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("DeletableContact-pre",elm.html(),(transcludeFn(scope)));
-				  },
-				  post:function(scope, elm, attrs,ctrl,transcludeFn){
-				  	console.debug("DeletableContact-post",elm.html(),(transcludeFn(scope)));
+				  	console.debug("mdlChip-post",attrs,elm,transcludeFn());
 				
 			  }
 			}

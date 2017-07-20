@@ -100,177 +100,56 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 101,
+				"buffer_size": 668,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.c",
+			"file": "src/chip/Chip.js",
 			"settings":
 			{
-				"buffer_size": 374,
+				"buffer_size": 1538,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/alf/Documents/Development/CLA/proja/makefile",
+			"file": "test/index.html",
 			"settings":
 			{
-				"buffer_size": 530,
+				"buffer_size": 4567,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.h",
+			"file": "test/component.tests.json",
 			"settings":
 			{
-				"buffer_size": 315,
+				"buffer_size": 989,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/alf/Documents/Development/CLA/proja/main.c",
+			"file": "test/components/Chips.html",
 			"settings":
 			{
-				"buffer_size": 1347,
+				"buffer_size": 690,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/alf/Documents/Development/CLA/proja/libuv-01-idle.c",
+			"file": "test/components/ChipTest.controller.js",
 			"settings":
 			{
-				"buffer_size": 681,
+				"buffer_size": 287,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/alf/Documents/Development/DLang/tut/t03_value_vs_ref.d",
-			"settings":
-			{
-				"buffer_size": 231,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/alf/Documents/Development/DLang/tut/t031_templates.d",
-			"settings":
-			{
-				"buffer_size": 747,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "echo PATH\nSET PATH=%PATH%;D:\\Runtime\\nodejs\nSET PATH=%PATH%;D:\\Runtime\\nginx-1.11.6\\\nSET PATH=%PATH%;D:\\Runtime\\php-7.0.13-nts-Win32-VC14-x86\nSET PATH=%PATH%;D:\\Runtime\\python-3.5.1-embed-win32\nSET PATH=%PATH%;D:\\Runtime\\Ruby23-x64\\bin\nSET PATH=%PATH%;D:\\Runtime\\pgsql\\bin\nSET PATH=%PATH%;D:\\Runtime\\mariadb-10.1.19-winx64\\bin\n",
-			"file": "/D/Runtime/sysPATH.bat",
-			"file_size": 335,
-			"file_write_time": 131378299350344531,
-			"settings":
-			{
-				"buffer_size": 327,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "nginx version: nginx/1.11.6\nUsage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]\n\nOptions:\n  -?,-h         : this help\n  -v            : show version and exit\n  -V            : show version and configure options then exit\n  -t            : test configuration and exit\n  -T            : test configuration, dump it and exit\n  -q            : suppress non-error messages during configuration testing\n  -s signal     : send signal to a master process: stop, quit, reopen, reload\n  -p prefix     : set prefix path (default: NONE)\n  -c filename   : set configuration file (default: conf/nginx.conf)\n  -g directives : set global directives out of configuration file\n\n",
-			"file": "/D/Runtime/man/nginx.txt",
-			"file_size": 0,
-			"file_write_time": 131378301143831665,
-			"settings":
-			{
-				"buffer_size": 686,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Runtime/nginx-1.11.6/conf/nginx.conf",
-			"settings":
-			{
-				"buffer_size": 2688,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Documents/linkedin",
-			"settings":
-			{
-				"buffer_size": 1292,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "Software Engineer with a demonstrated history of w"
-			}
-		},
-		{
-			"file": "/D/Runtime/nginx-1.11.6/conf/fastcgi_params",
-			"settings":
-			{
-				"buffer_size": 1007,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Runtime/nginx-1.11.6/stop.bat",
-			"settings":
-			{
-				"buffer_size": 13,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Runtime/nginx-1.11.6/start.bat",
-			"settings":
-			{
-				"buffer_size": 96,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\nphpinfo();\n?>",
-			"file": "/D/Runtime/nginx-1.11.6/html/phpinfo.php",
-			"file_size": 21,
-			"file_write_time": 131378313314496613,
-			"settings":
-			{
-				"buffer_size": 19,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/alf/Documents/Development/DLang/tut/templates_text/tax.mustache",
-			"settings":
-			{
-				"buffer_size": 148,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/alf/Documents/Development/DLang/tut/mustache_d/win.mak",
-			"settings":
-			{
-				"buffer_size": 342,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/app/dm/bin/sc.ini",
-			"settings":
-			{
-				"buffer_size": 212,
 				"line_ending": "Windows"
 			}
 		}
@@ -352,12 +231,40 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/alf/Documents/Development/CLA",
-		"/C/Users/alf/Documents/Development/CLA/proja",
-		"/C/Users/alf/Documents/Development/CLA/proja/preprocessor-out"
+		"/D/Development/angular-mdl",
+		"/D/Development/angular-mdl/src",
+		"/D/Development/angular-mdl/src/chip",
+		"/D/Development/angular-mdl/test",
+		"/D/Development/angular-mdl/test/components"
 	],
 	"file_history":
 	[
+		"/D/Development/angular-mdl/test/components/CheckboxTest.controller.js",
+		"/D/Development/angular-mdl/src/checkbox/Check.js",
+		"/D/Development/angular-mdl/test/components/Checkbox.html",
+		"/D/Development/angular-mdl/readme.md",
+		"/D/Development/angular-mdl/test/components/checkbox/Checkbox.html",
+		"/D/Development/biorhythm/package.json",
+		"/D/Development/_FBP/package.json",
+		"/D/Documents/linkedin",
+		"/D/Runtime/nginx-1.11.6/conf/nginx.conf",
+		"/D/Runtime/nginx-1.11.6/conf/fastcgi_params",
+		"/D/Runtime/nginx-1.11.6/stop.bat",
+		"/D/Runtime/nginx-1.11.6/start.bat",
+		"/D/Runtime/nginx-1.11.6/html/phpinfo.php",
+		"/D/Runtime/sysPATH.bat",
+		"/D/Runtime/man/nginx.txt",
+		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/win.mak",
+		"/C/app/dm/bin/sc.ini",
+		"/C/Users/alf/Documents/Development/DLang/tut/templates_text/tax.mustache",
+		"/C/Users/alf/Documents/Development/DLang/tut/t031_templates.d",
+		"/C/Users/alf/Documents/Development/DLang/tut/t03_value_vs_ref.d",
+		"/C/Users/alf/Documents/Development/CLA/proja/main.c",
+		"/C/Users/alf/Documents/Development/CLA/proja/libuv-01-idle.c",
+		"/C/Users/alf/Documents/Development/CLA/proja/makefile",
+		"/C/Users/alf/Documents/Development/CLA/proja/lib.h",
+		"/C/Users/alf/Documents/Development/CLA/proja/lib.c",
+		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
 		"/D/Runtime/shell.bat",
 		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/example/basic.d",
 		"/C/Users/alf/Documents/Development/DLang/tut/mustache_d/src/mustache.d",
@@ -387,7 +294,6 @@
 		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/mouseinput.c",
 		"/C/Users/alf/Documents/Development/CLA/projg/test-mouseinput/tui.h",
 		"/C/Users/alf/Documents/Development/CLA/libuv-x86/test01.c",
-		"/C/Users/alf/Documents/Development/CLA/proja/main.c",
 		"/C/Users/alf/Documents/Development/CLA/proj8/makefile",
 		"/C/Users/alf/Documents/Development/CLA/proj8/makefile.a0",
 		"/C/Users/alf/Documents/Development/CLA/libuv-x86/readme",
@@ -401,7 +307,6 @@
 		"/C/Users/alf/Documents/Development/sqlite/csvfile/test.log",
 		"/C/Users/alf/Documents/Development/mariadb/UDF/lib_mysqludf_udf.c",
 		"/D/Videos/povesti/xfaudio.sh",
-		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
 		"/C/Users/alf/Documents/Development/mariadb/UDF/printat.c",
 		"/C/Users/alf/Documents/Development/mariadb/UDF/winman.c",
 		"/C/Users/alf/Documents/Development/mariadb/UDF/vbuffer.c",
@@ -461,35 +366,11 @@
 		"/C/Users/alf/Documents/Development/upk-hex-bytes/arch",
 		"/C/Users/alf/Documents/Development/upk-hex-bytes/rc2.7z",
 		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc - Copy/exturl.c",
-		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc/exturl.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvfile/urlparser.hex",
-		"/C/Users/alf/Documents/Development/sqlite/csvfile/u_20020502.log",
-		"/C/Users/alf/Documents/Development/sqlite/csvfile/u_20001001.log",
-		"/C/Users/alf/Documents/Development/sqlite/csvmbpg/ext_init.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/csv.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvmbpg/virtual_csvmbpg.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvmbpg.tar",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/makedll.bat",
-		"/C/Users/alf/Documents/Development/sqlite/csvfile/XMLtoSQLite.php",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/series.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/testseries.bat",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/testseries.sql",
-		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/compilesrc.sublime-build",
-		"/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/gcc.sublime-build",
-		"/D/Runtime/reg-cmd-background.reg",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/lib-StringClass.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator_token.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator_tests.c",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/iterator-file.c",
-		"/D/Runtime/reg-cmd.reg",
-		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/lib-tokenizer.c",
-		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/test.c",
-		"/C/Users/alf/Documents/Development/sqlite/csv-vtab/lib-tokenizer.h",
-		"/C/Users/alf/Documents/Development/sqlite/csvtab/package.txt"
+		"/C/Users/alf/Documents/Development/upk-hex-bytes/arc/exturl.c"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -631,24 +512,112 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/alf/AppData/Roaming/Sublime Text 3/Packages/User/mock.sublime-build",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 101,
+						"buffer_size": 668,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								101,
-								101
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/chip/Chip.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1235,
+								1235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4567,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2312,
+								2312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/component.tests.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 989,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								987,
+								987
 							]
 						],
 						"settings":
@@ -659,353 +628,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 374,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								229,
-								229
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/alf/Documents/Development/CLA/proja/makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 530,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								530,
-								530
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/alf/Documents/Development/CLA/proja/lib.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								207,
-								207
-							],
-							[
-								226,
-								226
-							],
-							[
-								286,
-								286
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/alf/Documents/Development/CLA/proja/main.c",
+					"file": "test/components/Chips.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1347,
+						"buffer_size": 690,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								375,
-								375
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/Users/alf/Documents/Development/CLA/proja/libuv-01-idle.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 681,
-						"regions":
-						{
-						},
-						"selection":
-						[
+								336,
+								336
+							],
 							[
-								485,
-								485
+								492,
+								492
+							],
+							[
+								647,
+								647
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/alf/Documents/Development/DLang/tut/t03_value_vs_ref.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 231,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								106,
-								106
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/C/Users/alf/Documents/Development/DLang/tut/t031_templates.d",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 747,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								408,
-								408
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/D/D.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/D/Runtime/sysPATH.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								84,
-								84
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/D/Runtime/man/nginx.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 686,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								684,
-								684
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/D/Runtime/nginx-1.11.6/conf/nginx.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2688,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1640,
-								1640
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 473.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "/D/Documents/linkedin",
+					"buffer": 5,
+					"file": "test/components/ChipTest.controller.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1292,
+						"buffer_size": 287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								149,
-								149
+								102,
+								102
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Software Engineer with a demonstrated history of w",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/D/Runtime/nginx-1.11.6/conf/fastcgi_params",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1007,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1013,185 +694,17 @@
 					},
 					"stack_index": 3,
 					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/D/Runtime/nginx-1.11.6/stop.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13,
-								13
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/D/Runtime/nginx-1.11.6/start.bat",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 96,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								34,
-								34
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "/D/Runtime/nginx-1.11.6/html/phpinfo.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "/C/Users/alf/Documents/Development/DLang/tut/templates_text/tax.mustache",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								132,
-								132
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML Mustache/Syntaxes/HTMLMustache.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "/C/Users/alf/Documents/Development/DLang/tut/mustache_d/win.mak",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 342,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "/C/app/dm/bin/sc.ini",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								150,
-								153
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 28.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -1228,7 +741,7 @@
 	"project": "angular-mdl.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1266,7 +779,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 334.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
